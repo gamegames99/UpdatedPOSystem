@@ -79,6 +79,8 @@ Public Class menu
             formToShow = New menu()
         ElseIf clickedButton Is btnDisposal Then
             formToShow = New Disposal()
+        ElseIf clickedButton Is btnReport Then
+            formToShow = New ReportsForm()
         End If
 
         If formToShow IsNot Nothing Then
@@ -90,5 +92,8 @@ Public Class menu
             formToShow.BringToFront()
             formToShow.Show()
         End If
+    End Sub
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        MessageBox.Show("A project for recording and tracking purchase orders", "Prompt Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

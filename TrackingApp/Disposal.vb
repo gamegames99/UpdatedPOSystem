@@ -27,7 +27,7 @@ Public Class Disposal
         Try
             Ifcon()
             If DataGridView1.SelectedRows.Count > 0 Then
-                Dim eqId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("id_container").Value)
+                Dim idContain As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("id_container").Value)
                 Dim result As DialogResult = MessageBox.Show("Are you sure you want to dispose this item?", "Confirmation",
                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 If result = DialogResult.Yes Then
@@ -36,11 +36,18 @@ Public Class Disposal
                         ' Insert into history table
                         cmd.Connection = conn
                         cmd.CommandText = "INSERT INTO disposal (item_desc, item_serial,po_number,reason,date_of_disposal) VALUES (@dsc, @srl, @poNo,@reason,@dod)"
+                        cmd.Parameters.Clear()
                         cmd.Parameters.Add("@dod", MySqlDbType.Date).Value = DateTime.Today
                         cmd.Parameters.Add("@poNo", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("purchase_order_no").Value.ToString()
                         cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("item_serial").Value.ToString()
                         cmd.Parameters.Add("@dsc", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("item_desc").Value.ToString()
                         cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
+                        cmd.ExecuteNonQuery()
+
+                        cmd.Connection = conn
+                        cmd.CommandText = "DELETE FROM po_items_container WHERE id_container = @id"
+                        cmd.Parameters.Clear()
+                        cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContain
                         cmd.ExecuteNonQuery()
                         MsgBox("Item Disposed!")
                     Else
@@ -94,6 +101,6 @@ Public Class Disposal
     End Sub
 
     Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
-        DisposedList.Show()
+        DisposedList.ShowDialog()
     End Sub
 End Class

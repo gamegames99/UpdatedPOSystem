@@ -24,5 +24,6 @@ Public Class DisposedList
     End Sub
     Private Sub DisposedList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tableDisposed()
+        Me.CenterToParent()
     End Sub
 End Class

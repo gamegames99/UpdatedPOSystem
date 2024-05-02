@@ -25,6 +25,9 @@
     <Compile Update="menu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ReportsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Stocks.vb">
       <SubType>Form</SubType>
     </Compile>
