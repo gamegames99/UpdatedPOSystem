@@ -27,6 +27,7 @@ Partial Class menu
         ProgressBar1 = New ProgressBar()
         Label1 = New Label()
         Panel2 = New Panel()
+        btnReturn = New Button()
         btnReport = New Button()
         btnDisposal = New Button()
         btnStock = New Button()
@@ -64,6 +65,7 @@ Partial Class menu
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.Goldenrod
         Label1.Location = New Point(12, 1)
         Label1.Name = "Label1"
         Label1.Size = New Size(306, 37)
@@ -73,6 +75,7 @@ Partial Class menu
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
+        Panel2.Controls.Add(btnReturn)
         Panel2.Controls.Add(btnReport)
         Panel2.Controls.Add(btnDisposal)
         Panel2.Controls.Add(btnStock)
@@ -84,12 +87,29 @@ Partial Class menu
         Panel2.Size = New Size(200, 640)
         Panel2.TabIndex = 1
         ' 
+        ' btnReturn
+        ' 
+        btnReturn.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        btnReturn.Dock = DockStyle.Top
+        btnReturn.FlatAppearance.MouseDownBackColor = Color.White
+        btnReturn.FlatAppearance.MouseOverBackColor = Color.Goldenrod
+        btnReturn.FlatStyle = FlatStyle.Flat
+        btnReturn.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        btnReturn.ForeColor = Color.DeepSkyBlue
+        btnReturn.Location = New Point(0, 294)
+        btnReturn.Name = "btnReturn"
+        btnReturn.Size = New Size(200, 45)
+        btnReturn.TabIndex = 7
+        btnReturn.Text = "Returns"
+        btnReturn.UseVisualStyleBackColor = False
+        ' 
         ' btnReport
         ' 
         btnReport.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         btnReport.Dock = DockStyle.Top
-        btnReport.FlatAppearance.BorderSize = 0
-        btnReport.FlatStyle = FlatStyle.Popup
+        btnReport.FlatAppearance.MouseDownBackColor = Color.White
+        btnReport.FlatAppearance.MouseOverBackColor = Color.Goldenrod
+        btnReport.FlatStyle = FlatStyle.Flat
         btnReport.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnReport.ForeColor = Color.DeepSkyBlue
         btnReport.Location = New Point(0, 249)
@@ -103,8 +123,9 @@ Partial Class menu
         ' 
         btnDisposal.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         btnDisposal.Dock = DockStyle.Top
-        btnDisposal.FlatAppearance.BorderSize = 0
-        btnDisposal.FlatStyle = FlatStyle.Popup
+        btnDisposal.FlatAppearance.MouseDownBackColor = Color.White
+        btnDisposal.FlatAppearance.MouseOverBackColor = Color.Goldenrod
+        btnDisposal.FlatStyle = FlatStyle.Flat
         btnDisposal.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnDisposal.ForeColor = Color.DeepSkyBlue
         btnDisposal.Location = New Point(0, 204)
@@ -118,8 +139,9 @@ Partial Class menu
         ' 
         btnStock.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         btnStock.Dock = DockStyle.Top
-        btnStock.FlatAppearance.BorderSize = 0
-        btnStock.FlatStyle = FlatStyle.Popup
+        btnStock.FlatAppearance.MouseDownBackColor = Color.White
+        btnStock.FlatAppearance.MouseOverBackColor = Color.Goldenrod
+        btnStock.FlatStyle = FlatStyle.Flat
         btnStock.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnStock.ForeColor = Color.DeepSkyBlue
         btnStock.Location = New Point(0, 159)
@@ -133,8 +155,9 @@ Partial Class menu
         ' 
         btnOrders.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         btnOrders.Dock = DockStyle.Top
-        btnOrders.FlatAppearance.BorderSize = 0
-        btnOrders.FlatStyle = FlatStyle.Popup
+        btnOrders.FlatAppearance.MouseDownBackColor = Color.White
+        btnOrders.FlatAppearance.MouseOverBackColor = Color.Goldenrod
+        btnOrders.FlatStyle = FlatStyle.Flat
         btnOrders.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnOrders.ForeColor = Color.DeepSkyBlue
         btnOrders.Location = New Point(0, 114)
@@ -190,4 +213,5 @@ Partial Class menu
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer1 As Timer
     Friend WithEvents bw_loadpo As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btnReturn As Button
 End Class

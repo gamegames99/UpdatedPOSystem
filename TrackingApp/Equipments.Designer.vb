@@ -147,7 +147,7 @@ Partial Class Equipments
         btnEdit.Name = "btnEdit"
         btnEdit.Size = New Size(137, 30)
         btnEdit.TabIndex = 7
-        btnEdit.Text = "Update Contents"
+        btnEdit.Text = "Modify Contents"
         btnEdit.UseVisualStyleBackColor = False
         ' 
         ' GroupBox2
@@ -216,11 +216,11 @@ Partial Class Equipments
         btnRefresh.BackColor = Color.DeepSkyBlue
         btnRefresh.FlatStyle = FlatStyle.Popup
         btnRefresh.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnRefresh.Location = New Point(931, 48)
+        btnRefresh.Location = New Point(931, 47)
         btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(102, 30)
+        btnRefresh.Size = New Size(111, 30)
         btnRefresh.TabIndex = 3
-        btnRefresh.Text = "Refresh Cell"
+        btnRefresh.Text = "Refresh Table"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
         ' txtboxSupplier

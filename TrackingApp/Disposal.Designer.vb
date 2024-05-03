@@ -76,11 +76,11 @@ Partial Class Disposal
         ' 
         ' btnDone
         ' 
-        btnDone.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btnDone.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         btnDone.BackColor = Color.DeepSkyBlue
         btnDone.FlatStyle = FlatStyle.Popup
         btnDone.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnDone.Location = New Point(598, 371)
+        btnDone.Location = New Point(379, 331)
         btnDone.Name = "btnDone"
         btnDone.Size = New Size(181, 34)
         btnDone.TabIndex = 1

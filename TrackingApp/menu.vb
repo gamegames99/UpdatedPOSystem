@@ -53,7 +53,7 @@ Public Class menu
         Application.Exit()
     End Sub
 
-    Private Async Sub Button_Click(sender As Object, e As EventArgs) Handles btnOrders.Click, btnStock.Click, btnDisposal.Click, btnReport.Click
+    Private Async Sub Button_Click(sender As Object, e As EventArgs) Handles btnOrders.Click, btnStock.Click, btnDisposal.Click, btnReport.Click, btnReturn.Click
         Dim clickedButton = DirectCast(sender, Button)
         ClearPanel3()
         ShowProgressBar()
@@ -81,6 +81,8 @@ Public Class menu
             formToShow = New Disposal()
         ElseIf clickedButton Is btnReport Then
             formToShow = New ReportsForm()
+        ElseIf clickedButton Is btnReturn Then
+            formToShow = New ReturnsForm()
         End If
 
         If formToShow IsNot Nothing Then
@@ -94,6 +96,6 @@ Public Class menu
         End If
     End Sub
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        MessageBox.Show("A project for recording and tracking purchase orders", "Prompt Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("A project for tracking purchase orders", "000000000000000000x125000000", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

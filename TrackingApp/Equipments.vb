@@ -156,6 +156,7 @@ Public Class Equipments
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtboxSupplier.Clear()
         txtboxprs.Clear()
+        cbxPONum.Text = ""
     End Sub
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
@@ -203,36 +204,39 @@ Public Class Equipments
                 conn.Close()
             End Try
         Else
-            MsgBox("No purchase order number selected.")
+            MsgBox("No purchase order number selected. Please select a row")
         End If
     End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        ' Retrieve the selected purchase order number
-        Dim selectedPoNo As String = cbxPONum.SelectedItem.ToString()
-        Try
-            Ifcon()
-            cmd.Connection = conn
-            cmd.CommandText = "SELECT id_container, item_serial FROM po_items_container WHERE purchase_order_no = @po"
-            cmd.Parameters.Clear()
-            cmd.Parameters.AddWithValue("@po", selectedPoNo)
-            Dim reader As MySqlDataReader = cmd.ExecuteReader()
-            ' Create a list to store the item serial numbers
-            Dim serialNumbers As New List(Of String)()
-            Dim identifiers As New List(Of String)()
-            While reader.Read()
-                ' Add each item serial number to the list
-                serialNumbers.Add(reader("item_serial").ToString())
-                identifiers.Add(reader("id_container").ToString)
-            End While
-            reader.Close()
-            ' Open the editcontainer form and pass the selected purchase order number and item serial numbers
-            Dim editContainerForm As New editcontainer(selectedPoNo, serialNumbers, identifiers)
-            editContainerForm.ShowDialog()
-        Catch ex As MySqlException
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
-        Finally
-            conn.Close()
-        End Try
+        If cbxPONum.SelectedIndex <> -1 Then
+            Dim selectedPoNo As String = cbxPONum.SelectedItem.ToString()
+            Try
+                Ifcon()
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT id_container, item_serial FROM po_items_container WHERE purchase_order_no = @po"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@po", selectedPoNo)
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+                ' Create a list to store the item serial numbers
+                Dim serialNumbers As New List(Of String)()
+                Dim identifiers As New List(Of String)()
+                While reader.Read()
+                    ' Add each item serial number to the list
+                    serialNumbers.Add(reader("item_serial").ToString())
+                    identifiers.Add(reader("id_container").ToString)
+                End While
+                reader.Close()
+                ' Open the editcontainer form and pass the selected purchase order number and item serial numbers
+                Dim editContainerForm As New editcontainer(selectedPoNo, serialNumbers, identifiers)
+                editContainerForm.ShowDialog()
+            Catch ex As MySqlException
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            Finally
+                conn.Close()
+            End Try
+        Else
+            MsgBox("No item selected. Please select a row.")
+        End If
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

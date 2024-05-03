@@ -23,6 +23,7 @@ Partial Class stock_information
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        txtStatus = New Label()
         labelSerial = New Label()
         Label1 = New Label()
         Label2 = New Label()
@@ -42,12 +43,25 @@ Partial Class stock_information
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Panel1.Controls.Add(txtStatus)
         Panel1.Controls.Add(labelSerial)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(880, 54)
         Panel1.TabIndex = 0
+        ' 
+        ' txtStatus
+        ' 
+        txtStatus.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        txtStatus.AutoSize = True
+        txtStatus.BackColor = Color.GhostWhite
+        txtStatus.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtStatus.Location = New Point(667, 9)
+        txtStatus.Name = "txtStatus"
+        txtStatus.Size = New Size(70, 30)
+        txtStatus.TabIndex = 0
+        txtStatus.Text = "status"
         ' 
         ' labelSerial
         ' 
@@ -56,9 +70,9 @@ Partial Class stock_information
         labelSerial.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         labelSerial.Location = New Point(12, 9)
         labelSerial.Name = "labelSerial"
-        labelSerial.Size = New Size(128, 30)
+        labelSerial.Size = New Size(62, 30)
         labelSerial.TabIndex = 0
-        labelSerial.Text = "1234567890"
+        labelSerial.Text = "serial"
         ' 
         ' Label1
         ' 
@@ -96,7 +110,7 @@ Partial Class stock_information
         ' txtDesc
         ' 
         txtDesc.AutoSize = True
-        txtDesc.BackColor = Color.IndianRed
+        txtDesc.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
         txtDesc.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtDesc.Location = New Point(12, 322)
         txtDesc.Name = "txtDesc"
@@ -107,7 +121,7 @@ Partial Class stock_information
         ' txtSupplier
         ' 
         txtSupplier.AutoSize = True
-        txtSupplier.BackColor = Color.IndianRed
+        txtSupplier.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
         txtSupplier.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtSupplier.Location = New Point(12, 423)
         txtSupplier.Name = "txtSupplier"
@@ -119,7 +133,7 @@ Partial Class stock_information
         ' txtponumber
         ' 
         txtponumber.AutoSize = True
-        txtponumber.BackColor = Color.DeepSkyBlue
+        txtponumber.BackColor = Color.MediumVioletRed
         txtponumber.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtponumber.Location = New Point(12, 111)
         txtponumber.Name = "txtponumber"
@@ -131,7 +145,7 @@ Partial Class stock_information
         ' txtprs
         ' 
         txtprs.AutoSize = True
-        txtprs.BackColor = Color.DeepSkyBlue
+        txtprs.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
         txtprs.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtprs.Location = New Point(12, 221)
         txtprs.Name = "txtprs"
@@ -154,7 +168,7 @@ Partial Class stock_information
         ' txtpodate
         ' 
         txtpodate.AutoSize = True
-        txtpodate.BackColor = Color.DeepSkyBlue
+        txtpodate.BackColor = Color.MediumVioletRed
         txtpodate.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtpodate.Location = New Point(270, 111)
         txtpodate.Name = "txtpodate"
@@ -177,7 +191,7 @@ Partial Class stock_information
         ' txtprsdate
         ' 
         txtprsdate.AutoSize = True
-        txtprsdate.BackColor = Color.DeepSkyBlue
+        txtprsdate.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
         txtprsdate.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtprsdate.Location = New Point(270, 221)
         txtprsdate.Name = "txtprsdate"
@@ -201,6 +215,7 @@ Partial Class stock_information
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.Gray
         ClientSize = New Size(880, 485)
         Controls.Add(Label8)
         Controls.Add(Label5)
@@ -238,4 +253,5 @@ Partial Class stock_information
     Friend WithEvents Label6 As Label
     Friend WithEvents txtprsdate As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents txtStatus As Label
 End Class

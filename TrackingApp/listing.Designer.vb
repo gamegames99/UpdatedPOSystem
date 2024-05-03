@@ -28,6 +28,7 @@ Partial Class listing
         DataGridView1 = New DataGridView()
         btnUpdate = New Button()
         GroupBox1 = New GroupBox()
+        btnDelete = New Button()
         txtQy = New TextBox()
         Label5 = New Label()
         txtPrc = New TextBox()
@@ -36,7 +37,6 @@ Partial Class listing
         Label3 = New Label()
         txtDsc = New TextBox()
         Label2 = New Label()
-        btnDelete = New Button()
         Panel1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -79,10 +79,12 @@ Partial Class listing
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(12, 68)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.Size = New Size(859, 307)
         DataGridView1.TabIndex = 0
         ' 
@@ -118,6 +120,18 @@ Partial Class listing
         GroupBox1.TabIndex = 9
         GroupBox1.TabStop = False
         GroupBox1.Text = "Manage Items"
+        ' 
+        ' btnDelete
+        ' 
+        btnDelete.BackColor = Color.DeepSkyBlue
+        btnDelete.FlatStyle = FlatStyle.Popup
+        btnDelete.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnDelete.Location = New Point(716, 108)
+        btnDelete.Name = "btnDelete"
+        btnDelete.Size = New Size(137, 30)
+        btnDelete.TabIndex = 11
+        btnDelete.Text = "Delete Selected"
+        btnDelete.UseVisualStyleBackColor = False
         ' 
         ' txtQy
         ' 
@@ -191,18 +205,6 @@ Partial Class listing
         Label2.Size = New Size(94, 15)
         Label2.TabIndex = 9
         Label2.Text = "Item Description"
-        ' 
-        ' btnDelete
-        ' 
-        btnDelete.BackColor = Color.DeepSkyBlue
-        btnDelete.FlatStyle = FlatStyle.Popup
-        btnDelete.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnDelete.Location = New Point(716, 108)
-        btnDelete.Name = "btnDelete"
-        btnDelete.Size = New Size(137, 30)
-        btnDelete.TabIndex = 11
-        btnDelete.Text = "Delete Selected"
-        btnDelete.UseVisualStyleBackColor = False
         ' 
         ' listing
         ' 

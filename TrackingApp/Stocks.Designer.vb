@@ -23,6 +23,7 @@ Partial Class Stocks
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         GroupBox1 = New GroupBox()
+        txtIdContainer = New TextBox()
         txtboxDescription = New TextBox()
         btnView = New Button()
         btnRefresh = New Button()
@@ -50,6 +51,7 @@ Partial Class Stocks
         ' 
         GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         GroupBox1.BackColor = Color.White
+        GroupBox1.Controls.Add(txtIdContainer)
         GroupBox1.Controls.Add(txtboxDescription)
         GroupBox1.Controls.Add(btnView)
         GroupBox1.Controls.Add(btnRefresh)
@@ -69,6 +71,15 @@ Partial Class Stocks
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         GroupBox1.Text = "Inbound Stocks"
+        ' 
+        ' txtIdContainer
+        ' 
+        txtIdContainer.Location = New Point(484, 32)
+        txtIdContainer.Name = "txtIdContainer"
+        txtIdContainer.ReadOnly = True
+        txtIdContainer.Size = New Size(100, 23)
+        txtIdContainer.TabIndex = 9
+        txtIdContainer.Visible = False
         ' 
         ' txtboxDescription
         ' 
@@ -182,9 +193,9 @@ Partial Class Stocks
         Label1.AutoSize = True
         Label1.Location = New Point(357, 390)
         Label1.Name = "Label1"
-        Label1.Size = New Size(86, 15)
+        Label1.Size = New Size(51, 15)
         Label1.TabIndex = 2
-        Label1.Text = "Receiver Name"
+        Label1.Text = "Receiver"
         ' 
         ' txtboxPersonnel
         ' 
@@ -196,10 +207,12 @@ Partial Class Stocks
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(6, 61)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.Size = New Size(599, 326)
         DataGridView1.TabIndex = 0
         ' 
@@ -219,10 +232,12 @@ Partial Class Stocks
         ' 
         ' DataGridView2
         ' 
+        DataGridView2.AllowUserToDeleteRows = False
         DataGridView2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Location = New Point(6, 61)
         DataGridView2.Name = "DataGridView2"
+        DataGridView2.ReadOnly = True
         DataGridView2.Size = New Size(421, 420)
         DataGridView2.TabIndex = 0
         ' 
@@ -284,4 +299,5 @@ Partial Class Stocks
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents btnView As Button
+    Friend WithEvents txtIdContainer As TextBox
 End Class

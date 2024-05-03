@@ -44,11 +44,11 @@ Public Class Disposal
                         cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
                         cmd.ExecuteNonQuery()
 
-                        cmd.Connection = conn
-                        cmd.CommandText = "DELETE FROM po_items_container WHERE id_container = @id"
-                        cmd.Parameters.Clear()
-                        cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContain
-                        cmd.ExecuteNonQuery()
+                        'cmd.Connection = conn
+                        'cmd.CommandText = "DELETE FROM po_items_container WHERE id_container = @id"
+                        'cmd.Parameters.Clear()
+                        'cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContain
+                        'cmd.ExecuteNonQuery()
                         MsgBox("Item Disposed!")
                     Else
                         MsgBox("Reason for disposal is required.")
