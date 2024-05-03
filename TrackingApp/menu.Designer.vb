@@ -93,7 +93,7 @@ Partial Class menu
         btnReturn.Dock = DockStyle.Top
         btnReturn.FlatAppearance.MouseDownBackColor = Color.White
         btnReturn.FlatAppearance.MouseOverBackColor = Color.Goldenrod
-        btnReturn.FlatStyle = FlatStyle.Flat
+        btnReturn.FlatStyle = FlatStyle.Popup
         btnReturn.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnReturn.ForeColor = Color.DeepSkyBlue
         btnReturn.Location = New Point(0, 294)
@@ -109,7 +109,7 @@ Partial Class menu
         btnReport.Dock = DockStyle.Top
         btnReport.FlatAppearance.MouseDownBackColor = Color.White
         btnReport.FlatAppearance.MouseOverBackColor = Color.Goldenrod
-        btnReport.FlatStyle = FlatStyle.Flat
+        btnReport.FlatStyle = FlatStyle.Popup
         btnReport.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnReport.ForeColor = Color.DeepSkyBlue
         btnReport.Location = New Point(0, 249)
@@ -125,7 +125,7 @@ Partial Class menu
         btnDisposal.Dock = DockStyle.Top
         btnDisposal.FlatAppearance.MouseDownBackColor = Color.White
         btnDisposal.FlatAppearance.MouseOverBackColor = Color.Goldenrod
-        btnDisposal.FlatStyle = FlatStyle.Flat
+        btnDisposal.FlatStyle = FlatStyle.Popup
         btnDisposal.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnDisposal.ForeColor = Color.DeepSkyBlue
         btnDisposal.Location = New Point(0, 204)
@@ -141,7 +141,7 @@ Partial Class menu
         btnStock.Dock = DockStyle.Top
         btnStock.FlatAppearance.MouseDownBackColor = Color.White
         btnStock.FlatAppearance.MouseOverBackColor = Color.Goldenrod
-        btnStock.FlatStyle = FlatStyle.Flat
+        btnStock.FlatStyle = FlatStyle.Popup
         btnStock.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnStock.ForeColor = Color.DeepSkyBlue
         btnStock.Location = New Point(0, 159)
@@ -157,7 +157,7 @@ Partial Class menu
         btnOrders.Dock = DockStyle.Top
         btnOrders.FlatAppearance.MouseDownBackColor = Color.White
         btnOrders.FlatAppearance.MouseOverBackColor = Color.Goldenrod
-        btnOrders.FlatStyle = FlatStyle.Flat
+        btnOrders.FlatStyle = FlatStyle.Popup
         btnOrders.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnOrders.ForeColor = Color.DeepSkyBlue
         btnOrders.Location = New Point(0, 114)
