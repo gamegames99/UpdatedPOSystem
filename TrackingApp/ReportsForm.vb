@@ -1,4 +1,6 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
+Imports OfficeOpenXml
 
 Public Class ReportsForm
     Private tableMappings As New Dictionary(Of String, String)()
@@ -103,8 +105,38 @@ Public Class ReportsForm
 
         Return primaryKeyColumns
     End Function
+    Private filePath As String
+    Private Sub SaveDataToExcel(dataGridView As DataGridView)
+        ExcelPackage.LicenseContext = LicenseContext.Commercial
+        Using package As New ExcelPackage()
+            Dim worksheet As ExcelWorksheet = package.Workbook.Worksheets.Add("Sheet1")
+
+            ' Write column headers
+            For columnIndex As Integer = 0 To dataGridView.Columns.Count - 1
+                worksheet.Cells(1, columnIndex + 1).Value = dataGridView.Columns(columnIndex).HeaderText
+            Next
+
+            ' Write data rows
+            For rowIndex As Integer = 0 To dataGridView.Rows.Count - 1
+                For columnIndex As Integer = 0 To dataGridView.Columns.Count - 1
+                    worksheet.Cells(rowIndex + 2, columnIndex + 1).Value = dataGridView.Rows(rowIndex).Cells(columnIndex).Value
+                Next
+            Next
+
+            ' Save the Excel file
+            Using fileStream As New FileStream(filePath, FileMode.Create)
+                package.SaveAs(fileStream)
+            End Using
+        End Using
+    End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        MsgBox("TBD")
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx"
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            filePath = saveFileDialog.FileName
+            SaveDataToExcel(DataGridView1)
+            MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 End Class
