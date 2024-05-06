@@ -133,7 +133,7 @@ Partial Class stock_information
         ' txtponumber
         ' 
         txtponumber.AutoSize = True
-        txtponumber.BackColor = Color.MediumVioletRed
+        txtponumber.BackColor = Color.FromArgb(CByte(190), CByte(106), CByte(21))
         txtponumber.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtponumber.Location = New Point(12, 111)
         txtponumber.Name = "txtponumber"
@@ -145,7 +145,7 @@ Partial Class stock_information
         ' txtprs
         ' 
         txtprs.AutoSize = True
-        txtprs.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
+        txtprs.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
         txtprs.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtprs.Location = New Point(12, 221)
         txtprs.Name = "txtprs"
@@ -168,7 +168,7 @@ Partial Class stock_information
         ' txtpodate
         ' 
         txtpodate.AutoSize = True
-        txtpodate.BackColor = Color.MediumVioletRed
+        txtpodate.BackColor = Color.FromArgb(CByte(190), CByte(106), CByte(21))
         txtpodate.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtpodate.Location = New Point(270, 111)
         txtpodate.Name = "txtpodate"
@@ -191,7 +191,7 @@ Partial Class stock_information
         ' txtprsdate
         ' 
         txtprsdate.AutoSize = True
-        txtprsdate.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
+        txtprsdate.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
         txtprsdate.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
         txtprsdate.Location = New Point(270, 221)
         txtprsdate.Name = "txtprsdate"
@@ -215,7 +215,7 @@ Partial Class stock_information
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Gray
+        BackColor = Color.White
         ClientSize = New Size(880, 485)
         Controls.Add(Label8)
         Controls.Add(Label5)

@@ -96,6 +96,6 @@ Public Class menu
         End If
     End Sub
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        MessageBox.Show("A project for tracking purchase orders", "000000000000000000x125000000", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("A project for tracking purchase orders", "0000000000x0000000012", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

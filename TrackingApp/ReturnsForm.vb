@@ -14,7 +14,7 @@ Public Class ReturnsForm
             DataGridView1.Columns("stock_id").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "Return An Item"
+            labelTitle.Text = "Select an item to return"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
@@ -30,10 +30,10 @@ Public Class ReturnsForm
             Ifcon()
             If DataGridView1.SelectedRows.Count > 0 Then
                 Dim idstocks As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("stock_id").Value)
-                Dim result As DialogResult = MessageBox.Show("Return selected item?", "Confirmation Prompt Message",
-                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                Dim result As DialogResult = MessageBox.Show("Selected item will be returned. Do you wish to continue?", "Confirmation Message : Returns",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                 If result = DialogResult.Yes Then
-                    Dim reason As String = InputBox("Please provide a reason for returning item:", "Reason")
+                    Dim reason As String = InputBox("Please provide a reason for returning item:", "Return reason is required to continue")
                     If Not String.IsNullOrWhiteSpace(reason) Then
                         ' Insert into history table
                         cmd.Connection = conn
@@ -52,13 +52,13 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
                         cmd.Parameters.Clear()
                         cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idstocks
                         cmd.ExecuteNonQuery()
-                        MsgBox("Item Returned!")
+                        MsgBox("Item Returned!", MsgBoxStyle.Information)
                     Else
-                        MsgBox("Reason for returns is required.")
+                        MsgBox("Reason for returns is required.", MsgBoxStyle.Exclamation)
                     End If
                 End If
             Else
-                MsgBox("No row selected.")
+                MsgBox("No row selected. Please select a row", MsgBoxStyle.Exclamation)
             End If
             newTable()
         Catch ex As Exception
@@ -79,7 +79,7 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
                 Dim qtyValue As Object = selectedRow.Cells("stockQuantity").Value
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("You cannot select from this table in View Mode", MsgBoxStyle.Exclamation)
         End Try
     End Sub
 
@@ -95,7 +95,7 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
             DataGridView1.Columns("id_returns").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "Returned Item List"
+            labelTitle.Text = "You are currently in View Mode"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally

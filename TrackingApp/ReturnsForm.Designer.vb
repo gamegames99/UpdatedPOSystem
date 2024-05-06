@@ -96,7 +96,7 @@ Partial Class ReturnsForm
         ' 
         labelTitle.AutoSize = True
         labelTitle.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        labelTitle.ForeColor = Color.White
+        labelTitle.ForeColor = Color.DeepSkyBlue
         labelTitle.Location = New Point(12, 9)
         labelTitle.Name = "labelTitle"
         labelTitle.Size = New Size(71, 30)
