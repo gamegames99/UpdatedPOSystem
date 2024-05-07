@@ -14,7 +14,7 @@ Public Class ReturnsForm
             DataGridView1.Columns("stock_id").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "Select an item to return"
+            labelTitle.Text = "You are viewing the list of item holders"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
@@ -95,7 +95,7 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
             DataGridView1.Columns("id_returns").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "You are currently in View Mode"
+            labelTitle.Text = "You are currently viewing returned items list"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally

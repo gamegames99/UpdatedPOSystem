@@ -90,11 +90,12 @@ Partial Class ReportsForm
         ' ComboBox1
         ' 
         ComboBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(413, 399)
+        ComboBox1.Location = New Point(400, 399)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(218, 23)
+        ComboBox1.Size = New Size(231, 23)
         ComboBox1.TabIndex = 3
         ' 
         ' ReportsForm

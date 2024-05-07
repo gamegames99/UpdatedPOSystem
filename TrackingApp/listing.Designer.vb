@@ -123,6 +123,7 @@ Partial Class listing
         ' 
         ' btnDelete
         ' 
+        btnDelete.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         btnDelete.BackColor = Color.DeepSkyBlue
         btnDelete.FlatStyle = FlatStyle.Popup
         btnDelete.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))

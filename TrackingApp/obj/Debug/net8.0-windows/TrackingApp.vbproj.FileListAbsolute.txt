@@ -122,3 +122,4 @@ C:\Users\User\Downloads\Update System\new-main\new-main\TrackingApp\bin\Debug\ne
 C:\Users\User\Downloads\Update System\new-main\new-main\TrackingApp\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\User\Downloads\Update System\new-main\new-main\TrackingApp\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\User\Downloads\Update System\new-main\new-main\TrackingApp\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\User\Downloads\Update System\new-main\new-main\TrackingApp\obj\Debug\net8.0-windows\TrackingApp.Settings.resources

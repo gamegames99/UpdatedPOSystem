@@ -27,6 +27,7 @@ Partial Class menu
         ProgressBar1 = New ProgressBar()
         Label1 = New Label()
         Panel2 = New Panel()
+        btnSettings = New Button()
         btnReturn = New Button()
         btnReport = New Button()
         btnDisposal = New Button()
@@ -75,6 +76,7 @@ Partial Class menu
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
+        Panel2.Controls.Add(btnSettings)
         Panel2.Controls.Add(btnReturn)
         Panel2.Controls.Add(btnReport)
         Panel2.Controls.Add(btnDisposal)
@@ -86,6 +88,22 @@ Partial Class menu
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(200, 640)
         Panel2.TabIndex = 1
+        ' 
+        ' btnSettings
+        ' 
+        btnSettings.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        btnSettings.Dock = DockStyle.Top
+        btnSettings.FlatAppearance.MouseDownBackColor = Color.White
+        btnSettings.FlatAppearance.MouseOverBackColor = Color.Goldenrod
+        btnSettings.FlatStyle = FlatStyle.Popup
+        btnSettings.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        btnSettings.ForeColor = Color.DeepSkyBlue
+        btnSettings.Location = New Point(0, 339)
+        btnSettings.Name = "btnSettings"
+        btnSettings.Size = New Size(200, 45)
+        btnSettings.TabIndex = 8
+        btnSettings.Text = "Settings"
+        btnSettings.UseVisualStyleBackColor = False
         ' 
         ' btnReturn
         ' 
@@ -214,4 +232,5 @@ Partial Class menu
     Friend WithEvents Timer1 As Timer
     Friend WithEvents bw_loadpo As System.ComponentModel.BackgroundWorker
     Friend WithEvents btnReturn As Button
+    Friend WithEvents btnSettings As Button
 End Class

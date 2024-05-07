@@ -98,4 +98,10 @@ Public Class menu
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         MessageBox.Show("A project for tracking purchase orders", "0000000000x0000000012", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+    Public Function GetPanel3ClientSize() As Size
+        Return Panel3.ClientSize
+    End Function
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        Settings.ShowDialog()
+    End Sub
 End Class

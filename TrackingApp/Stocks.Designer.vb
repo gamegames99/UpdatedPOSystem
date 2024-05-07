@@ -23,6 +23,7 @@ Partial Class Stocks
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         GroupBox1 = New GroupBox()
+        CheckBox1 = New CheckBox()
         txtIdContainer = New TextBox()
         txtboxDescription = New TextBox()
         btnView = New Button()
@@ -49,8 +50,9 @@ Partial Class Stocks
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        GroupBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         GroupBox1.BackColor = Color.White
+        GroupBox1.Controls.Add(CheckBox1)
         GroupBox1.Controls.Add(txtIdContainer)
         GroupBox1.Controls.Add(txtboxDescription)
         GroupBox1.Controls.Add(btnView)
@@ -67,14 +69,26 @@ Partial Class Stocks
         GroupBox1.Controls.Add(DataGridView1)
         GroupBox1.Location = New Point(12, 12)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(611, 497)
+        GroupBox1.Size = New Size(636, 497)
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         GroupBox1.Text = "Inbound Stocks"
         ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        CheckBox1.AutoSize = True
+        CheckBox1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        CheckBox1.Location = New Point(444, 34)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(176, 21)
+        CheckBox1.TabIndex = 10
+        CheckBox1.Text = "Show/Hide Item Holders"
+        CheckBox1.UseVisualStyleBackColor = True
+        ' 
         ' txtIdContainer
         ' 
-        txtIdContainer.Location = New Point(484, 32)
+        txtIdContainer.Location = New Point(125, 27)
         txtIdContainer.Name = "txtIdContainer"
         txtIdContainer.ReadOnly = True
         txtIdContainer.Size = New Size(100, 23)
@@ -86,7 +100,7 @@ Partial Class Stocks
         txtboxDescription.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         txtboxDescription.Location = New Point(16, 408)
         txtboxDescription.Name = "txtboxDescription"
-        txtboxDescription.Size = New Size(209, 23)
+        txtboxDescription.Size = New Size(268, 23)
         txtboxDescription.TabIndex = 8
         ' 
         ' btnView
@@ -95,7 +109,7 @@ Partial Class Stocks
         btnView.BackColor = Color.DeepSkyBlue
         btnView.FlatStyle = FlatStyle.Popup
         btnView.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnView.Location = New Point(241, 403)
+        btnView.Location = New Point(290, 403)
         btnView.Name = "btnView"
         btnView.Size = New Size(77, 28)
         btnView.TabIndex = 7
@@ -120,7 +134,7 @@ Partial Class Stocks
         btnSearch.BackColor = Color.DeepSkyBlue
         btnSearch.FlatStyle = FlatStyle.Popup
         btnSearch.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSearch.Location = New Point(241, 453)
+        btnSearch.Location = New Point(290, 453)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(77, 28)
         btnSearch.TabIndex = 7
@@ -132,17 +146,17 @@ Partial Class Stocks
         txtboxSearch.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         txtboxSearch.Location = New Point(16, 458)
         txtboxSearch.Name = "txtboxSearch"
-        txtboxSearch.Size = New Size(209, 23)
+        txtboxSearch.Size = New Size(268, 23)
         txtboxSearch.TabIndex = 6
         txtboxSearch.Text = "enter keywords..."
         ' 
         ' btnSave
         ' 
-        btnSave.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        btnSave.Anchor = AnchorStyles.Bottom
         btnSave.BackColor = Color.DeepSkyBlue
         btnSave.FlatStyle = FlatStyle.Popup
         btnSave.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSave.Location = New Point(511, 453)
+        btnSave.Location = New Point(536, 453)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(84, 28)
         btnSave.TabIndex = 5
@@ -151,17 +165,17 @@ Partial Class Stocks
         ' 
         ' txtboxQuantity
         ' 
-        txtboxQuantity.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        txtboxQuantity.Location = New Point(357, 458)
+        txtboxQuantity.Anchor = AnchorStyles.Bottom
+        txtboxQuantity.Location = New Point(392, 458)
         txtboxQuantity.Name = "txtboxQuantity"
         txtboxQuantity.Size = New Size(138, 23)
         txtboxQuantity.TabIndex = 4
         ' 
         ' Label2
         ' 
-        Label2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Label2.Anchor = AnchorStyles.Bottom
         Label2.AutoSize = True
-        Label2.Location = New Point(357, 440)
+        Label2.Location = New Point(392, 440)
         Label2.Name = "Label2"
         Label2.Size = New Size(53, 15)
         Label2.TabIndex = 3
@@ -189,9 +203,9 @@ Partial Class Stocks
         ' 
         ' Label1
         ' 
-        Label1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Label1.Anchor = AnchorStyles.Bottom
         Label1.AutoSize = True
-        Label1.Location = New Point(357, 390)
+        Label1.Location = New Point(392, 390)
         Label1.Name = "Label1"
         Label1.Size = New Size(51, 15)
         Label1.TabIndex = 2
@@ -199,21 +213,21 @@ Partial Class Stocks
         ' 
         ' txtboxPersonnel
         ' 
-        txtboxPersonnel.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
-        txtboxPersonnel.Location = New Point(357, 408)
+        txtboxPersonnel.Anchor = AnchorStyles.Bottom
+        txtboxPersonnel.Location = New Point(392, 408)
         txtboxPersonnel.Name = "txtboxPersonnel"
-        txtboxPersonnel.Size = New Size(248, 23)
+        txtboxPersonnel.Size = New Size(228, 23)
         txtboxPersonnel.TabIndex = 1
         ' 
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToDeleteRows = False
-        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(6, 61)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
-        DataGridView1.Size = New Size(599, 326)
+        DataGridView1.Size = New Size(624, 326)
         DataGridView1.TabIndex = 0
         ' 
         ' GroupBox2
@@ -223,9 +237,9 @@ Partial Class Stocks
         GroupBox2.Controls.Add(DataGridView2)
         GroupBox2.Controls.Add(btnSearch2)
         GroupBox2.Controls.Add(txtboxSearch2)
-        GroupBox2.Location = New Point(629, 12)
+        GroupBox2.Location = New Point(654, 12)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(433, 497)
+        GroupBox2.Size = New Size(575, 497)
         GroupBox2.TabIndex = 1
         GroupBox2.TabStop = False
         GroupBox2.Text = "Outbound Stocks"
@@ -238,7 +252,7 @@ Partial Class Stocks
         DataGridView2.Location = New Point(6, 61)
         DataGridView2.Name = "DataGridView2"
         DataGridView2.ReadOnly = True
-        DataGridView2.Size = New Size(421, 420)
+        DataGridView2.Size = New Size(563, 420)
         DataGridView2.TabIndex = 0
         ' 
         ' btnSearch2
@@ -247,7 +261,7 @@ Partial Class Stocks
         btnSearch2.BackColor = Color.DeepSkyBlue
         btnSearch2.FlatStyle = FlatStyle.Popup
         btnSearch2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSearch2.Location = New Point(315, 22)
+        btnSearch2.Location = New Point(457, 22)
         btnSearch2.Name = "btnSearch2"
         btnSearch2.Size = New Size(99, 28)
         btnSearch2.TabIndex = 7
@@ -257,7 +271,7 @@ Partial Class Stocks
         ' txtboxSearch2
         ' 
         txtboxSearch2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        txtboxSearch2.Location = New Point(108, 27)
+        txtboxSearch2.Location = New Point(250, 27)
         txtboxSearch2.Name = "txtboxSearch2"
         txtboxSearch2.Size = New Size(201, 23)
         txtboxSearch2.TabIndex = 6
@@ -267,7 +281,7 @@ Partial Class Stocks
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(1074, 521)
+        ClientSize = New Size(1241, 521)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Name = "Stocks"
@@ -300,4 +314,5 @@ Partial Class Stocks
     Friend WithEvents Label4 As Label
     Friend WithEvents btnView As Button
     Friend WithEvents txtIdContainer As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

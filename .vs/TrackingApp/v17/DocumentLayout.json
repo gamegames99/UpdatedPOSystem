@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|c:\\users\\user\\downloads\\update system\\new-main\\new-main\\trackingapp\\everything.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\everything.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|c:\\users\\user\\downloads\\update system\\new-main\\new-main\\trackingapp\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|c:\\users\\user\\downloads\\update system\\new-main\\new-main\\trackingapp\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\menu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\menu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\stock_information.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\stock_information.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\stocks.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\stocks.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|c:\\users\\user\\downloads\\update system\\new-main\\new-main\\trackingapp\\reportsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\reportsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\reportsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\reportsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\stock_information.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\stock_information.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\stocks.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\stocks.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\menu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\menu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\returnsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\returnsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|c:\\users\\user\\downloads\\update system\\new-main\\new-main\\trackingapp\\listing.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\listing.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\returnsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\returnsform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|c:\\users\\user\\downloads\\update system\\new-main\\new-main\\trackingapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\trackingapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{F603C41C-7A61-4034-8A68-15CC0C6A4C25}|TrackingApp\\TrackingApp.vbproj|solutionrelative:trackingapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,95 +50,95 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReportsForm.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReportsForm.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\ReportsForm.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReportsForm.vb",
-              "RelativeToolTip": "TrackingApp\\ReportsForm.vb",
-              "ViewState": "AQIAAFAAAAAAAAAAAAA9wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-06T03:18:53.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReportsForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReportsForm.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\ReportsForm.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReportsForm.vb [Design]",
-              "RelativeToolTip": "TrackingApp\\ReportsForm.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-06T02:21:07.765Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Stocks.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Stocks.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\Stocks.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Stocks.vb",
-              "RelativeToolTip": "TrackingApp\\Stocks.vb",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAUwIoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-06T01:02:45.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "stock_information.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\stock_information.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\stock_information.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\stock_information.vb",
-              "RelativeToolTip": "TrackingApp\\stock_information.vb",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBQAAAAsAAAA",
+              "Title": "listing.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\listing.vb",
+              "RelativeDocumentMoniker": "TrackingApp\\listing.vb",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\listing.vb [Design]",
+              "RelativeToolTip": "TrackingApp\\listing.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-06T00:59:34.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-07T03:33:41.561Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "stock_information.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\stock_information.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\stock_information.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\stock_information.vb [Design]",
-              "RelativeToolTip": "TrackingApp\\stock_information.vb [Design]",
+              "Title": "Settings.vb",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Settings.vb",
+              "RelativeDocumentMoniker": "TrackingApp\\Settings.vb",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Settings.vb",
+              "RelativeToolTip": "TrackingApp\\Settings.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-06T00:56:18.067Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-07T02:36:37.502Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Stocks.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Stocks.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\Stocks.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Stocks.vb [Design]",
-              "RelativeToolTip": "TrackingApp\\Stocks.vb [Design]",
+              "Title": "Settings.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Settings.vb",
+              "RelativeDocumentMoniker": "TrackingApp\\Settings.vb",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Settings.vb [Design]",
+              "RelativeToolTip": "TrackingApp\\Settings.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-06T00:56:13.442Z",
+              "WhenOpened": "2024-05-07T02:29:31.373Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Everything.vb",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Everything.vb",
+              "RelativeDocumentMoniker": "TrackingApp\\Everything.vb",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Everything.vb",
+              "RelativeToolTip": "TrackingApp\\Everything.vb",
+              "ViewState": "AQIAABoAAAAAAAAAAAAwwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-05-07T01:40:32.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Form1.vb",
+              "RelativeDocumentMoniker": "TrackingApp\\Form1.vb",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Form1.vb",
+              "RelativeToolTip": "TrackingApp\\Form1.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-05-07T00:21:08.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Form1.vb",
+              "RelativeDocumentMoniker": "TrackingApp\\Form1.vb",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\Form1.vb [Design]",
+              "RelativeToolTip": "TrackingApp\\Form1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-05-07T00:21:06.043Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "menu.vb",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\menu.vb",
               "RelativeDocumentMoniker": "TrackingApp\\menu.vb",
               "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\menu.vb",
               "RelativeToolTip": "TrackingApp\\menu.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAIAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAApwAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-05-03T03:58:45.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "menu.vb [Design]",
               "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\menu.vb",
               "RelativeDocumentMoniker": "TrackingApp\\menu.vb",
@@ -154,31 +146,6 @@
               "RelativeToolTip": "TrackingApp\\menu.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-05-03T02:27:15.468Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ReturnsForm.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReturnsForm.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\ReturnsForm.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReturnsForm.vb",
-              "RelativeToolTip": "TrackingApp\\ReturnsForm.vb",
-              "ViewState": "AQIAAAoAAAAAAAAAAADgvw4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-03T01:54:24.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReturnsForm.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReturnsForm.vb",
-              "RelativeDocumentMoniker": "TrackingApp\\ReturnsForm.vb",
-              "ToolTip": "C:\\Users\\User\\Downloads\\Update System\\new-main\\new-main\\TrackingApp\\ReturnsForm.vb [Design]",
-              "RelativeToolTip": "TrackingApp\\ReturnsForm.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-05-03T01:53:42.319Z",
               "EditorCaption": " [Design]"
             }
           ]

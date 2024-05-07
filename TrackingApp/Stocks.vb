@@ -67,6 +67,7 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
     End Sub
     Private Sub Stocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         clearAll()
+        hideGB()
     End Sub
     Private Sub ResizeColumns()
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -213,5 +214,19 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
         Finally
             conn.Close()
         End Try
+    End Sub
+    Private Sub hideGB()
+        CheckBox1.CheckState = CheckState.Unchecked
+        GroupBox2.Visible = False
+        GroupBox1.Width = ClientSize.Width - DataGridView1.Left
+    End Sub
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            GroupBox2.Visible = True
+            GroupBox1.Width = ClientSize.Width - GroupBox1.Left - GroupBox2.Width ' Adjust the width of GroupBox1 dynamically
+        Else
+            GroupBox2.Visible = False
+            GroupBox1.Width = ClientSize.Width - DataGridView1.Left
+        End If
     End Sub
 End Class

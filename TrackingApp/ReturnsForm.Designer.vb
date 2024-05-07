@@ -99,9 +99,8 @@ Partial Class ReturnsForm
         labelTitle.ForeColor = Color.DeepSkyBlue
         labelTitle.Location = New Point(12, 9)
         labelTitle.Name = "labelTitle"
-        labelTitle.Size = New Size(71, 30)
+        labelTitle.Size = New Size(0, 30)
         labelTitle.TabIndex = 0
-        labelTitle.Text = "Label1"
         ' 
         ' ReturnsForm
         ' 
