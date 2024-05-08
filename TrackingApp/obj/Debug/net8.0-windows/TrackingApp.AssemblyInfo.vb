@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("TrackingApp"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+567e88263ecb7fd40c07d78d27eabcaf8ea85676"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a26c52f9930b3f57f5e5b4cf8e9b6c41ce6db88"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("TrackingApp"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("TrackingApp"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

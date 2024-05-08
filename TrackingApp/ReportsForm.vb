@@ -26,42 +26,35 @@ Public Class ReportsForm
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         ' Open the database connection
         Ifcon()
-
-        ' Check if a table is selected in the ComboBox
         If ComboBox1.SelectedItem IsNot Nothing Then
-            ' Clear the existing data in the DataGridView
             DataGridView1.DataSource = Nothing
             DataGridView1.Rows.Clear()
 
-            ' Get the selected table name
             Dim tableName As String = tableMappings(ComboBox1.SelectedItem.ToString())
 
-            ' Retrieve the data from the selected table
             Dim query As String = "SELECT * FROM " & tableName
 
-            ' Create a command to execute the query
             Using command As New MySqlCommand(query, conn)
-                ' Create a data adapter to retrieve the data
                 Using adapter As New MySqlDataAdapter(command)
-                    ' Create a DataTable to hold the data
                     Dim dataTable As New DataTable()
 
-                    ' Fill the DataTable with the data from the database
                     adapter.Fill(dataTable)
 
-                    ' Remove primary key columns
                     Dim primaryKeyColumns As List(Of String) = GetPrimaryKeyColumns(tableName)
-                    For Each primaryKeyColumn As String In primaryKeyColumns
-                        dataTable.Columns.Remove(primaryKeyColumn)
+
+                    ' Remove the primary key columns from the DataTable
+                    For Each columnName As String In primaryKeyColumns
+                        If dataTable.Columns.Contains(columnName) Then
+                            dataTable.Columns.Remove(columnName)
+                        End If
                     Next
 
-                    ' Bind the DataTable to the DataGridView to display the data
                     DataGridView1.DataSource = dataTable
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
                     DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
                 End Using
             End Using
-            ' Update Label1.Text based on the selected item
+
             If tableName = "po_items_container" Then
                 Label1.Text = "List of all Items"
             ElseIf tableName = "po_listing" Then
@@ -74,37 +67,29 @@ Public Class ReportsForm
                 Label1.Text = "List of all Returned Items"
             End If
         End If
-        ' Close the database connection
+
         conn.Close()
     End Sub
 
     Private Function GetPrimaryKeyColumns(tableName As String) As List(Of String)
-        ' Open the database connection
-        Ifcon()
-
         Dim primaryKeyColumns As New List(Of String)()
 
-        ' Retrieve the primary key column names for the specified table
-        Dim query As String = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME = @TableName AND CONSTRAINT_NAME = 'PRIMARY'"
+        ' Retrieve the primary key information from the database schema
+        Dim schemaQuery As String = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME = @TableName AND CONSTRAINT_NAME = 'PRIMARY'"
 
-        ' Create a command to execute the query
-        Using command As New MySqlCommand(query, conn)
+        Using command As New MySqlCommand(schemaQuery, conn)
             command.Parameters.AddWithValue("@TableName", tableName)
-
-            ' Execute the query and read the primary key column names
             Using reader As MySqlDataReader = command.ExecuteReader()
                 While reader.Read()
-                    ' Add the primary key column name to the list
-                    primaryKeyColumns.Add(reader.GetString(0))
+                    Dim columnName As String = reader("COLUMN_NAME").ToString()
+                    primaryKeyColumns.Add(columnName)
                 End While
             End Using
         End Using
 
-        ' Close the database connection
-        conn.Close()
-
         Return primaryKeyColumns
     End Function
+
     Private filePath As String
     Private Sub SaveDataToExcel(dataGridView As DataGridView)
         ExcelPackage.LicenseContext = LicenseContext.Commercial

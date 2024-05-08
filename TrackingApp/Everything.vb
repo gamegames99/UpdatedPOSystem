@@ -18,22 +18,4 @@ Module Everything
             connectionOpen()
         End If
     End Sub
-    Function IsDatabaseExist(database As String) As Boolean
-        Dim query As String = $"SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{database}'"
-        cmd = New MySqlCommand(query, conn)
-        Dim result As Object = cmd.ExecuteScalar()
-        Return result IsNot Nothing AndAlso Not String.IsNullOrEmpty(result.ToString())
-    End Function
-
-    Sub EstablishNewConnection(server As String, username As String, password As String)
-        conn.Close()
-        connectionOpen()
-
-        Dim database As String = New MySqlConnectionStringBuilder(conn.ConnectionString).Database
-        If Not IsDatabaseExist(database) Then
-            conn.Close()
-            ' Notify Settings.vb form to establish a new connection
-            Settings.NotifyEstablishNewConnection()
-        End If
-    End Sub
 End Module
