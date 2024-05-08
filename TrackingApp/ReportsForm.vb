@@ -39,7 +39,11 @@ Public Class ReportsForm
                     Dim dataTable As New DataTable()
 
                     adapter.Fill(dataTable)
-
+                    ModifyDisposalColumnNames(dataTable)
+                    ModifyPoItemContainerColumnNames(dataTable)
+                    ModifyPoListingColumnNames(dataTable)
+                    ModifyReturnsColumnNames(dataTable)
+                    ModifyStocksColumnNames(dataTable)
                     Dim primaryKeyColumns As List(Of String) = GetPrimaryKeyColumns(tableName)
 
                     ' Remove the primary key columns from the DataTable

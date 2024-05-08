@@ -59,10 +59,10 @@ Public Class listing
             If DataGridView1.SelectedRows.Count > 0 Then
                 Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
                 identifier = If(selectedRow.Cells("id_container").Value IsNot Nothing, selectedRow.Cells("id_container").Value.ToString(), "")
-                txtDsc.Text = If(selectedRow.Cells("item_desc").Value IsNot Nothing, selectedRow.Cells("item_desc").Value.ToString(), "")
-                txtPrc.Text = If(selectedRow.Cells("item_price").Value IsNot Nothing, selectedRow.Cells("item_price").Value.ToString(), "")
-                txtQy.Text = If(selectedRow.Cells("item_quantity").Value IsNot Nothing, selectedRow.Cells("item_quantity").Value.ToString(), "")
-                txtSrn.Text = If(selectedRow.Cells("item_serial").Value IsNot Nothing, selectedRow.Cells("item_serial").Value.ToString(), "")
+                txtDsc.Text = If(selectedRow.Cells("Item Description").Value IsNot Nothing, selectedRow.Cells("Item Description").Value.ToString(), "")
+                txtPrc.Text = If(selectedRow.Cells("Unit Price").Value IsNot Nothing, selectedRow.Cells("Unit Price").Value.ToString(), "")
+                txtQy.Text = If(selectedRow.Cells("Quantity").Value IsNot Nothing, selectedRow.Cells("Quantity").Value.ToString(), "")
+                txtSrn.Text = If(selectedRow.Cells("Serial Number").Value IsNot Nothing, selectedRow.Cells("Serial Number").Value.ToString(), "")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

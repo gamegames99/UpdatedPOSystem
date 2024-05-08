@@ -11,7 +11,7 @@ Public Class DisposedList
             Dim dataTable As New DataTable()
 
             adapter.Fill(dataTable)
-
+            ModifyDisposalColumnNames(dataTable)
             DataGridView1.DataSource = dataTable
             DataGridView1.Columns("disposal_id").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill

@@ -118,7 +118,7 @@ Partial Class menu
         btnReturn.Name = "btnReturn"
         btnReturn.Size = New Size(200, 45)
         btnReturn.TabIndex = 7
-        btnReturn.Text = "Returns"
+        btnReturn.Text = "Retrieve / Returns"
         btnReturn.UseVisualStyleBackColor = False
         ' 
         ' btnReport
@@ -150,7 +150,7 @@ Partial Class menu
         btnDisposal.Name = "btnDisposal"
         btnDisposal.Size = New Size(200, 45)
         btnDisposal.TabIndex = 5
-        btnDisposal.Text = "Disposal"
+        btnDisposal.Text = "Disposals"
         btnDisposal.UseVisualStyleBackColor = False
         ' 
         ' btnStock

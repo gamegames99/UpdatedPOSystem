@@ -9,12 +9,12 @@ Public Class ReturnsForm
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim dataTable As New DataTable()
             adapter.Fill(dataTable)
-
+            ModifyStocksColumnNames(dataTable)
             DataGridView1.DataSource = dataTable
             DataGridView1.Columns("stock_id").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "You are viewing the list of item holders"
+            labelTitle.Text = "List of all Item Holders"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
@@ -30,7 +30,7 @@ Public Class ReturnsForm
             Ifcon()
             If DataGridView1.SelectedRows.Count > 0 Then
                 Dim idstocks As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("stock_id").Value)
-                Dim result As DialogResult = MessageBox.Show("Selected item will be returned. Do you wish to continue?", "Confirmation Message : Returns",
+                Dim result As DialogResult = MessageBox.Show("Selected item will be retrieved. Do you wish to continue?", "Confirmation Message : Returns",
                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                 If result = DialogResult.Yes Then
                     Dim reason As String = InputBox("Please provide a reason for returning item:", "Return reason is required to continue")
@@ -72,11 +72,11 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
             If DataGridView1.SelectedRows.Count > 0 AndAlso Not DataGridView1.SelectedRows(0).IsNewRow Then
                 Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
                 Dim idValue As Object = selectedRow.Cells("stock_id").Value
-                Dim nameValue As Object = selectedRow.Cells("name_receiver").Value
-                Dim descValue As Object = selectedRow.Cells("stockDescription").Value
-                Dim srlValue As Object = selectedRow.Cells("stock_serial").Value
-                Dim dateValue As Object = selectedRow.Cells("date_received").Value
-                Dim qtyValue As Object = selectedRow.Cells("stockQuantity").Value
+                Dim nameValue As Object = selectedRow.Cells("Name of Receiver").Value
+                Dim descValue As Object = selectedRow.Cells("Item Description").Value
+                Dim srlValue As Object = selectedRow.Cells("Serial Number").Value
+                Dim dateValue As Object = selectedRow.Cells("Date Received").Value
+                Dim qtyValue As Object = selectedRow.Cells("Quantity").Value
             End If
         Catch ex As Exception
             MsgBox("You cannot select from this table in View Mode", MsgBoxStyle.Exclamation)
@@ -88,14 +88,14 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
             Ifcon()
             Dim query As String = "SELECT * FROM returns"
             Dim adapter As New MySqlDataAdapter(query, conn)
-            Dim dataTable As New DataTable()
-            adapter.Fill(dataTable)
-
-            DataGridView1.DataSource = dataTable
+            Dim dt As New DataTable()
+            adapter.Fill(dt)
+            ModifyReturnsColumnNames(dt)
+            DataGridView1.DataSource = dt
             DataGridView1.Columns("id_returns").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "You are currently viewing returned items list"
+            labelTitle.Text = "List of all Retrieved Items"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally

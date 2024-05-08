@@ -10,6 +10,7 @@ Public Class Disposal
             Dim adapter As New MySqlDataAdapter(command)
             Dim dataTable As New DataTable()
             adapter.Fill(dataTable)
+            ModifyPoItemContainerColumnNames(dataTable)
             DataGridView1.DataSource = dataTable
             DataGridView1.Columns("id_container").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -38,9 +39,9 @@ Public Class Disposal
                         cmd.CommandText = "INSERT INTO disposal (item_desc, item_serial,po_number,reason,date_of_disposal) VALUES (@dsc, @srl, @poNo,@reason,@dod)"
                         cmd.Parameters.Clear()
                         cmd.Parameters.Add("@dod", MySqlDbType.Date).Value = DateTime.Today
-                        cmd.Parameters.Add("@poNo", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("purchase_order_no").Value.ToString()
-                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("item_serial").Value.ToString()
-                        cmd.Parameters.Add("@dsc", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("item_desc").Value.ToString()
+                        cmd.Parameters.Add("@poNo", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Purchase Order #").Value.ToString()
+                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Serial Name").Value.ToString()
+                        cmd.Parameters.Add("@dsc", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Item Description").Value.ToString()
                         cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
                         cmd.ExecuteNonQuery()
 

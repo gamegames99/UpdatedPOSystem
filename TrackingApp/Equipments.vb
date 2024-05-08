@@ -85,6 +85,7 @@ Public Class Equipments
             Dim adapter As New MySqlDataAdapter(command)
             Dim dataTable As New DataTable()
             adapter.Fill(dataTable)
+            ModifyPoListingColumnNames(dataTable)
             DataGridView1.DataSource = dataTable
             DataGridView1.Columns("id_po").Visible = False
         Catch ex As Exception
@@ -170,7 +171,7 @@ Public Class Equipments
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         If DataGridView1.SelectedRows.Count > 0 AndAlso Not DataGridView1.SelectedRows(0).IsNewRow Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
-            Dim cellValue As Object = selectedRow.Cells("po_no").Value
+            Dim cellValue As Object = selectedRow.Cells("Purchase Order #").Value
             If cellValue IsNot Nothing Then
                 Dim selectedPoNo As String = cellValue.ToString()
                 cbxPONum.Text = selectedPoNo
@@ -192,7 +193,7 @@ Public Class Equipments
 
                 Dim dTable As New DataTable()
                 dTable.Load(reader)
-
+                ModifyPoItemContainerColumnNames(dTable)
                 ' Open the listing form and pass the DataTable as a parameter
                 Dim listingForm As New listing(dTable, selectedPoNo)
                 listingForm.ShowDialog()

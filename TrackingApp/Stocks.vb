@@ -32,11 +32,11 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
             Dim adapter As New MySqlDataAdapter(command)
             Dim dt As New DataTable()
             adapter.Fill(dt)
-
+            ModifyPoItemContainerColumnNames(dt)
             DataGridView1.DataSource = dt
             DataGridView1.Columns("id_container").Visible = False
-            DataGridView1.Columns("item_price").Visible = False
-            DataGridView1.Columns("item_quantity").Visible = False
+            DataGridView1.Columns("Unit Price").Visible = False
+            DataGridView1.Columns("Quantity").Visible = False
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -50,10 +50,10 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim dataTable As New DataTable()
             adapter.Fill(dataTable)
-
+            ModifyStocksColumnNames(dataTable)
             DataGridView2.DataSource = dataTable
             DataGridView2.Columns("stock_id").Visible = False
-            DataGridView2.Columns("stock_serial").Visible = False
+            DataGridView2.Columns("Serial Number").Visible = False
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
@@ -79,9 +79,9 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
         If DataGridView1.SelectedRows.Count > 0 AndAlso Not DataGridView1.SelectedRows(0).IsNewRow Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim idValue As Object = selectedRow.Cells("id_container").Value
-            Dim srlValue As Object = selectedRow.Cells("item_serial").Value
-            Dim cellValue As Object = selectedRow.Cells("item_desc").Value
-            Dim qtyValue As Object = selectedRow.Cells("item_quantity").Value
+            Dim srlValue As Object = selectedRow.Cells("Serial Number").Value
+            Dim cellValue As Object = selectedRow.Cells("Item Description").Value
+            Dim qtyValue As Object = selectedRow.Cells("Quantity").Value
             If cellValue IsNot Nothing Then
                 txtboxDescription.Text = cellValue.ToString()
                 txtboxQuantity.Text = qtyValue.ToString()
