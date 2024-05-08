@@ -41,9 +41,9 @@ Public Class ReturnsForm
 VALUES (@rename, @name, @srl,@reason,@rdate)"
                         cmd.Parameters.Clear()
                         cmd.Parameters.Add("@rdate", MySqlDbType.Date).Value = DateTime.Today
-                        cmd.Parameters.Add("@rename", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("name_receiver").Value.ToString()
-                        cmd.Parameters.Add("@name", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("stockDescription").Value.ToString()
-                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("stock_serial").Value.ToString()
+                        cmd.Parameters.Add("@rename", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Name of Receiver").Value.ToString()
+                        cmd.Parameters.Add("@name", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Item Description").Value.ToString()
+                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Serial Number").Value.ToString()
                         cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
                         cmd.ExecuteNonQuery()
 
@@ -95,7 +95,7 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
             DataGridView1.Columns("id_returns").Visible = False
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            labelTitle.Text = "List of all Retrieved Items"
+            labelTitle.Text = "List of all Returned Items"
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally

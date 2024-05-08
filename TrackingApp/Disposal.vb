@@ -29,6 +29,26 @@ Public Class Disposal
             Ifcon()
             If DataGridView1.SelectedRows.Count > 0 Then
                 Dim idContain As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("id_container").Value)
+                Dim srlNumber As String = DataGridView1.SelectedRows(0).Cells("Serial Number").Value.ToString()
+                ' Check if the item exists in the stock table
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT COUNT(*) FROM stock WHERE stock_serial = @serial"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@serial", srlNumber)
+                Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                If count > 0 Then
+                    MsgBox("Selected item is currently in-use, you cannot dispose in-use items", MsgBoxStyle.Exclamation)
+                    Return ' Exit the event handler
+                End If
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT COUNT(*) FROM disposal WHERE item_serial = @serial"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@serial", srlNumber)
+                Dim ct As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                If ct > 0 Then
+                    MsgBox("Selected item has already been disposed.", MsgBoxStyle.Exclamation)
+                    Return ' Exit the event handler
+                End If
                 Dim result As DialogResult = MessageBox.Show("Are you sure you want to dispose this item?", "Confirmation",
                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 If result = DialogResult.Yes Then
@@ -40,7 +60,7 @@ Public Class Disposal
                         cmd.Parameters.Clear()
                         cmd.Parameters.Add("@dod", MySqlDbType.Date).Value = DateTime.Today
                         cmd.Parameters.Add("@poNo", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Purchase Order #").Value.ToString()
-                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Serial Name").Value.ToString()
+                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Serial Number").Value.ToString()
                         cmd.Parameters.Add("@dsc", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Item Description").Value.ToString()
                         cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
                         cmd.ExecuteNonQuery()

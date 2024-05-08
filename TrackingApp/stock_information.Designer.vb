@@ -48,7 +48,7 @@ Partial Class stock_information
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(880, 54)
+        Panel1.Size = New Size(696, 54)
         Panel1.TabIndex = 0
         ' 
         ' txtStatus
@@ -56,8 +56,8 @@ Partial Class stock_information
         txtStatus.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         txtStatus.AutoSize = True
         txtStatus.BackColor = Color.GhostWhite
-        txtStatus.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtStatus.Location = New Point(667, 9)
+        txtStatus.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        txtStatus.Location = New Point(479, 9)
         txtStatus.Name = "txtStatus"
         txtStatus.Size = New Size(70, 30)
         txtStatus.TabIndex = 0
@@ -67,7 +67,7 @@ Partial Class stock_information
         ' 
         labelSerial.AutoSize = True
         labelSerial.BackColor = Color.DeepSkyBlue
-        labelSerial.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        labelSerial.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
         labelSerial.Location = New Point(12, 9)
         labelSerial.Name = "labelSerial"
         labelSerial.Size = New Size(62, 30)
@@ -77,10 +77,12 @@ Partial Class stock_information
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        Label1.BackColor = Color.White
+        Label1.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        Label1.ForeColor = Color.Black
         Label1.Location = New Point(12, 285)
         Label1.Name = "Label1"
-        Label1.Size = New Size(165, 25)
+        Label1.Size = New Size(183, 30)
         Label1.TabIndex = 1
         Label1.Text = "Item Description :"
         Label1.TextAlign = ContentAlignment.TopCenter
@@ -88,10 +90,12 @@ Partial Class stock_information
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        Label2.BackColor = Color.White
+        Label2.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        Label2.ForeColor = Color.Black
         Label2.Location = New Point(12, 384)
         Label2.Name = "Label2"
-        Label2.Size = New Size(92, 25)
+        Label2.Size = New Size(102, 30)
         Label2.TabIndex = 1
         Label2.Text = "Supplier :"
         Label2.TextAlign = ContentAlignment.MiddleCenter
@@ -99,19 +103,23 @@ Partial Class stock_information
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        Label3.BackColor = Color.White
+        Label3.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        Label3.ForeColor = Color.Black
         Label3.Location = New Point(12, 69)
         Label3.Name = "Label3"
-        Label3.Size = New Size(169, 25)
+        Label3.Size = New Size(189, 30)
         Label3.TabIndex = 1
         Label3.Text = "Purchase Order # :"
         Label3.TextAlign = ContentAlignment.BottomCenter
         ' 
         ' txtDesc
         ' 
+        txtDesc.AutoEllipsis = True
         txtDesc.AutoSize = True
-        txtDesc.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
+        txtDesc.BackColor = Color.Black
         txtDesc.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        txtDesc.ForeColor = Color.DeepSkyBlue
         txtDesc.Location = New Point(12, 322)
         txtDesc.Name = "txtDesc"
         txtDesc.Size = New Size(102, 25)
@@ -121,8 +129,9 @@ Partial Class stock_information
         ' txtSupplier
         ' 
         txtSupplier.AutoSize = True
-        txtSupplier.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
+        txtSupplier.BackColor = Color.Black
         txtSupplier.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        txtSupplier.ForeColor = Color.DeepSkyBlue
         txtSupplier.Location = New Point(12, 423)
         txtSupplier.Name = "txtSupplier"
         txtSupplier.Size = New Size(102, 25)
@@ -133,8 +142,9 @@ Partial Class stock_information
         ' txtponumber
         ' 
         txtponumber.AutoSize = True
-        txtponumber.BackColor = Color.FromArgb(CByte(190), CByte(106), CByte(21))
+        txtponumber.BackColor = Color.Black
         txtponumber.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        txtponumber.ForeColor = Color.DeepSkyBlue
         txtponumber.Location = New Point(12, 111)
         txtponumber.Name = "txtponumber"
         txtponumber.Size = New Size(102, 25)
@@ -145,8 +155,9 @@ Partial Class stock_information
         ' txtprs
         ' 
         txtprs.AutoSize = True
-        txtprs.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
+        txtprs.BackColor = Color.Black
         txtprs.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        txtprs.ForeColor = Color.DeepSkyBlue
         txtprs.Location = New Point(12, 221)
         txtprs.Name = "txtprs"
         txtprs.Size = New Size(102, 25)
@@ -157,10 +168,12 @@ Partial Class stock_information
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        Label5.ForeColor = Color.Black
         Label5.Location = New Point(12, 179)
         Label5.Name = "Label5"
-        Label5.Size = New Size(71, 25)
+        Label5.Size = New Size(78, 30)
         Label5.TabIndex = 1
         Label5.Text = "PRS # :"
         Label5.TextAlign = ContentAlignment.BottomCenter
@@ -168,8 +181,9 @@ Partial Class stock_information
         ' txtpodate
         ' 
         txtpodate.AutoSize = True
-        txtpodate.BackColor = Color.FromArgb(CByte(190), CByte(106), CByte(21))
+        txtpodate.BackColor = Color.Black
         txtpodate.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        txtpodate.ForeColor = Color.DeepSkyBlue
         txtpodate.Location = New Point(270, 111)
         txtpodate.Name = "txtpodate"
         txtpodate.Size = New Size(102, 25)
@@ -180,10 +194,12 @@ Partial Class stock_information
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        Label6.BackColor = Color.White
+        Label6.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        Label6.ForeColor = Color.Black
         Label6.Location = New Point(270, 69)
         Label6.Name = "Label6"
-        Label6.Size = New Size(204, 25)
+        Label6.Size = New Size(228, 30)
         Label6.TabIndex = 1
         Label6.Text = "Purchase Order Date  :"
         Label6.TextAlign = ContentAlignment.BottomCenter
@@ -191,8 +207,9 @@ Partial Class stock_information
         ' txtprsdate
         ' 
         txtprsdate.AutoSize = True
-        txtprsdate.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
+        txtprsdate.BackColor = Color.Black
         txtprsdate.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        txtprsdate.ForeColor = Color.DeepSkyBlue
         txtprsdate.Location = New Point(270, 221)
         txtprsdate.Name = "txtprsdate"
         txtprsdate.Size = New Size(102, 25)
@@ -203,10 +220,12 @@ Partial Class stock_information
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold)
+        Label8.BackColor = Color.White
+        Label8.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold)
+        Label8.ForeColor = Color.Black
         Label8.Location = New Point(270, 179)
         Label8.Name = "Label8"
-        Label8.Size = New Size(101, 25)
+        Label8.Size = New Size(111, 30)
         Label8.TabIndex = 1
         Label8.Text = "PRS Date :"
         Label8.TextAlign = ContentAlignment.BottomCenter
@@ -216,7 +235,7 @@ Partial Class stock_information
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(880, 485)
+        ClientSize = New Size(696, 485)
         Controls.Add(Label8)
         Controls.Add(Label5)
         Controls.Add(Label6)
@@ -230,7 +249,6 @@ Partial Class stock_information
         Controls.Add(txtDesc)
         Controls.Add(Label1)
         Controls.Add(Panel1)
-        FormBorderStyle = FormBorderStyle.FixedToolWindow
         Name = "stock_information"
         Text = "Item Information"
         Panel1.ResumeLayout(False)

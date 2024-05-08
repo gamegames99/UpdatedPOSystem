@@ -33,4 +33,8 @@
         txtpodate.Text = pDate.Date
         txtprsdate.Text = prDate.Date
     End Sub
+
+    Private Sub stock_information_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        txtDesc.MaximumSize = New Size(Me.ClientSize.Width - Label1.Left - 10, 0)
+    End Sub
 End Class

@@ -53,9 +53,9 @@ Partial Class Settings
         Label1.ForeColor = Color.DeepSkyBlue
         Label1.Location = New Point(12, 9)
         Label1.Name = "Label1"
-        Label1.Size = New Size(201, 30)
+        Label1.Size = New Size(323, 30)
         Label1.TabIndex = 0
-        Label1.Text = "Connect to a server"
+        Label1.Text = "Database Configuration Settings"
         ' 
         ' txtServer
         ' 
@@ -70,9 +70,9 @@ Partial Class Settings
         Label2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
         Label2.Location = New Point(12, 87)
         Label2.Name = "Label2"
-        Label2.Size = New Size(80, 17)
+        Label2.Size = New Size(114, 17)
         Label2.TabIndex = 2
-        Label2.Text = "Server Host"
+        Label2.Text = "Server Hostname"
         ' 
         ' txtUsername
         ' 

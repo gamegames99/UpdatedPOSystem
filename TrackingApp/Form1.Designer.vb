@@ -59,6 +59,7 @@ Partial Class Form1
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(156, 23)
         TextBox2.TabIndex = 0
+        TextBox2.UseSystemPasswordChar = True
         ' 
         ' Label2
         ' 

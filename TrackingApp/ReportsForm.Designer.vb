@@ -68,6 +68,7 @@ Partial Class ReportsForm
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = SystemColors.Control
@@ -80,6 +81,7 @@ Partial Class ReportsForm
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(12, 52)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.Size = New Size(776, 321)
         DataGridView1.TabIndex = 2
         ' 

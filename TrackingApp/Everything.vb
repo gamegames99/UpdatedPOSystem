@@ -9,7 +9,7 @@ Module Everything
     Public prsNum As String
 
     Sub connectionOpen()
-        conn.ConnectionString = "server=127.0.0.1;user=root;password=user;database=project"
+        conn.ConnectionString = "server=127.0.0.1;user=root;password=user;database=newbileco"
         conn.Open()
     End Sub
 

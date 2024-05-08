@@ -292,9 +292,9 @@ Partial Class Equipments
         btnClear.BackColor = Color.DeepSkyBlue
         btnClear.FlatStyle = FlatStyle.Popup
         btnClear.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnClear.Location = New Point(808, 48)
+        btnClear.Location = New Point(931, 91)
         btnClear.Name = "btnClear"
-        btnClear.Size = New Size(102, 30)
+        btnClear.Size = New Size(111, 30)
         btnClear.TabIndex = 8
         btnClear.Text = "Clear Fields"
         btnClear.UseVisualStyleBackColor = False

@@ -46,10 +46,10 @@ Partial Class ReturnsForm
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
         DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(12, 78)
+        DataGridView1.Location = New Point(12, 57)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
-        DataGridView1.Size = New Size(776, 275)
+        DataGridView1.Size = New Size(776, 296)
         DataGridView1.TabIndex = 0
         ' 
         ' btnReturns

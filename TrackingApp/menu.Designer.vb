@@ -150,7 +150,7 @@ Partial Class menu
         btnDisposal.Name = "btnDisposal"
         btnDisposal.Size = New Size(200, 45)
         btnDisposal.TabIndex = 5
-        btnDisposal.Text = "Disposals"
+        btnDisposal.Text = "Item Disposal"
         btnDisposal.UseVisualStyleBackColor = False
         ' 
         ' btnStock
