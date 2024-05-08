@@ -97,6 +97,7 @@ Partial Class Settings
         txtPassword.Name = "txtPassword"
         txtPassword.Size = New Size(383, 23)
         txtPassword.TabIndex = 1
+        txtPassword.UseSystemPasswordChar = True
         ' 
         ' Label4
         ' 
@@ -111,6 +112,7 @@ Partial Class Settings
         ' btnApply
         ' 
         btnApply.BackColor = Color.DeepSkyBlue
+        btnApply.Enabled = False
         btnApply.FlatStyle = FlatStyle.Popup
         btnApply.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnApply.Location = New Point(292, 269)
@@ -119,11 +121,11 @@ Partial Class Settings
         btnApply.TabIndex = 3
         btnApply.Text = "Apply"
         btnApply.UseVisualStyleBackColor = False
-        btnApply.Visible = False
         ' 
         ' btnCreate
         ' 
         btnCreate.BackColor = Color.DeepSkyBlue
+        btnCreate.Enabled = False
         btnCreate.FlatStyle = FlatStyle.Popup
         btnCreate.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCreate.Location = New Point(156, 269)
@@ -132,7 +134,6 @@ Partial Class Settings
         btnCreate.TabIndex = 3
         btnCreate.Text = "Create"
         btnCreate.UseVisualStyleBackColor = False
-        btnCreate.Visible = False
         ' 
         ' btnCheck
         ' 

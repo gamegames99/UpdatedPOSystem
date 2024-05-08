@@ -22,7 +22,7 @@ Public Class Settings
             Try
                 connection.Open()
                 MessageBox.Show("Database connection detected!")
-                btnCreate.Visible = True
+                btnCreate.Enabled = True
             Catch ex As Exception
                 MessageBox.Show("Error connecting to database: " & ex.Message)
             Finally
@@ -79,7 +79,7 @@ Public Class Settings
                 End Using
 
                 MessageBox.Show("Schema and tables created successfully!")
-                btnApply.Visible = True
+                btnApply.Enabled = True
             Catch ex As Exception
                 MessageBox.Show("Error creating database and tables: " & ex.Message)
             Finally
