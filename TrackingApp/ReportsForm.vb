@@ -6,21 +6,24 @@ Public Class ReportsForm
     Private tableMappings As New Dictionary(Of String, String)()
 
     Private Sub ReportsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Open the database connection
-        Ifcon()
+        Try ' Open the database connection
+            Ifcon()
 
-        tableMappings.Add("Items List", "po_items_container")
-        tableMappings.Add("Purchase Orders", "po_listing")
-        tableMappings.Add("Disposed Items", "disposal")
-        tableMappings.Add("Returned Items", "returns")
-        tableMappings.Add("Item Holders", "stock")
-        ' Add more mappings as needed
+            tableMappings.Add("Items List", "po_items_container")
+            tableMappings.Add("Purchase Orders", "po_listing")
+            tableMappings.Add("Disposed Items", "disposal")
+            tableMappings.Add("Returned Items", "returns")
+            tableMappings.Add("Item Holders", "stock")
+            ' Add more mappings as needed
 
-        ' Add the user-friendly texts to the ComboBox
-        ComboBox1.Items.AddRange(tableMappings.Keys.ToArray())
-
-        ' Close the database connection
-        conn.Close()
+            ' Add the user-friendly texts to the ComboBox
+            ComboBox1.Items.AddRange(tableMappings.Keys.ToArray())
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        Finally
+            ' Close the database connection
+            conn.Close()
+        End Try
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
@@ -126,6 +129,34 @@ Public Class ReportsForm
             filePath = saveFileDialog.FileName
             SaveDataToExcel(DataGridView1)
             MessageBox.Show($"Data saved to: {filePath}", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim searchTerm = txtSearch.Text.Trim.ToLower
+        If String.IsNullOrWhiteSpace(searchTerm) Then
+            MessageBox.Show("Field is empty. Type at least one character", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return
+        End If
+        DataGridView1.ClearSelection()
+        Dim matchFound = False
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            Dim rowContainsTerm = False
+            For Each cell As DataGridViewCell In row.Cells
+                If cell.Value IsNot Nothing AndAlso cell.Value.ToString.ToLower.Contains(searchTerm) Then
+                    rowContainsTerm = True
+                    cell.Selected = True
+                    Exit For
+                End If
+            Next
+            If rowContainsTerm Then
+                row.Selected = True
+                DataGridView1.FirstDisplayedScrollingRowIndex = row.Index
+                matchFound = True
+            End If
+        Next
+        If Not matchFound Then
+            MessageBox.Show("No matches found", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 End Class

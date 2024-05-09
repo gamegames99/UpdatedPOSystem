@@ -1,8 +1,4 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
-Imports MySql.Data.MySqlClient
-Imports MySql.Data.Types
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Equipments
     Private Sub cbox()
@@ -89,7 +85,7 @@ Public Class Equipments
             DataGridView1.DataSource = dataTable
             DataGridView1.Columns("id_po").Visible = False
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
             conn.Close()
         End Try

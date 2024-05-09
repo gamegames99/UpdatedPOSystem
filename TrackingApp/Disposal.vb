@@ -16,7 +16,7 @@ Public Class Disposal
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
             conn.Close()
         End Try
@@ -79,7 +79,7 @@ Public Class Disposal
                 MsgBox("No row selected.")
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
             conn.Close()
         End Try

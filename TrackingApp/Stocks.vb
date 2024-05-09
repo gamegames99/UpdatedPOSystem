@@ -38,7 +38,7 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
             DataGridView1.Columns("Unit Price").Visible = False
             DataGridView1.Columns("Quantity").Visible = False
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
             conn.Close()
         End Try

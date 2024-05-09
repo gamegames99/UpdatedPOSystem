@@ -29,6 +29,10 @@ Partial Class ReportsForm
         DataGridView1 = New DataGridView()
         btnSave = New Button()
         ComboBox1 = New ComboBox()
+        btnSearch = New Button()
+        txtSearch = New TextBox()
+        Label2 = New Label()
+        Label3 = New Label()
         Panel1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -39,9 +43,9 @@ Partial Class ReportsForm
         btnView.BackColor = Color.DeepSkyBlue
         btnView.FlatStyle = FlatStyle.Popup
         btnView.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnView.Location = New Point(657, 391)
+        btnView.Location = New Point(645, 394)
         btnView.Name = "btnView"
-        btnView.Size = New Size(107, 35)
+        btnView.Size = New Size(119, 35)
         btnView.TabIndex = 0
         btnView.Text = "View"
         btnView.UseVisualStyleBackColor = False
@@ -63,8 +67,9 @@ Partial Class ReportsForm
         Label1.ForeColor = Color.DeepSkyBlue
         Label1.Location = New Point(12, 9)
         Label1.Name = "Label1"
-        Label1.Size = New Size(0, 30)
+        Label1.Size = New Size(92, 30)
         Label1.TabIndex = 0
+        Label1.Text = "List of ..."
         ' 
         ' DataGridView1
         ' 
@@ -82,16 +87,16 @@ Partial Class ReportsForm
         DataGridView1.Location = New Point(12, 52)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
-        DataGridView1.Size = New Size(776, 321)
+        DataGridView1.Size = New Size(776, 319)
         DataGridView1.TabIndex = 2
         ' 
         ' btnSave
         ' 
-        btnSave.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        btnSave.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         btnSave.BackColor = Color.DeepSkyBlue
         btnSave.FlatStyle = FlatStyle.Popup
         btnSave.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSave.Location = New Point(31, 391)
+        btnSave.Location = New Point(645, 444)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(119, 35)
         btnSave.TabIndex = 0
@@ -104,19 +109,64 @@ Partial Class ReportsForm
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(400, 399)
+        ComboBox1.Location = New Point(400, 402)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(231, 23)
         ComboBox1.TabIndex = 3
+        ' 
+        ' btnSearch
+        ' 
+        btnSearch.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        btnSearch.BackColor = Color.DeepSkyBlue
+        btnSearch.FlatStyle = FlatStyle.Popup
+        btnSearch.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSearch.Location = New Point(222, 394)
+        btnSearch.Name = "btnSearch"
+        btnSearch.Size = New Size(119, 35)
+        btnSearch.TabIndex = 0
+        btnSearch.Text = "Search"
+        btnSearch.UseVisualStyleBackColor = False
+        ' 
+        ' txtSearch
+        ' 
+        txtSearch.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        txtSearch.Location = New Point(12, 402)
+        txtSearch.Name = "txtSearch"
+        txtSearch.Size = New Size(204, 23)
+        txtSearch.TabIndex = 4
+        ' 
+        ' Label2
+        ' 
+        Label2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Label2.AutoSize = True
+        Label2.Location = New Point(12, 384)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(65, 15)
+        Label2.TabIndex = 5
+        Label2.Text = "Search Box"
+        ' 
+        ' Label3
+        ' 
+        Label3.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        Label3.AutoSize = True
+        Label3.Location = New Point(400, 384)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(104, 15)
+        Label3.TabIndex = 5
+        Label3.Text = "Select Information"
         ' 
         ' ReportsForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(800, 491)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(txtSearch)
         Controls.Add(ComboBox1)
         Controls.Add(DataGridView1)
         Controls.Add(Panel1)
+        Controls.Add(btnSearch)
         Controls.Add(btnSave)
         Controls.Add(btnView)
         Name = "ReportsForm"
@@ -125,6 +175,7 @@ Partial Class ReportsForm
         Panel1.PerformLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents btnView As Button
@@ -133,4 +184,8 @@ Partial Class ReportsForm
     Friend WithEvents btnSave As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

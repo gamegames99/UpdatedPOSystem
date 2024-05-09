@@ -69,9 +69,9 @@ Partial Class menu
         Label1.ForeColor = Color.Goldenrod
         Label1.Location = New Point(12, 1)
         Label1.Name = "Label1"
-        Label1.Size = New Size(306, 37)
+        Label1.Size = New Size(318, 37)
         Label1.TabIndex = 0
-        Label1.Text = "Inventory Management"
+        Label1.Text = "PO Management System"
         ' 
         ' Panel2
         ' 

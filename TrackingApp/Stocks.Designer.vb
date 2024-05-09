@@ -22,8 +22,8 @@ Partial Class Stocks
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         GroupBox1 = New GroupBox()
         CheckBox1 = New CheckBox()
         txtIdContainer = New TextBox()
@@ -93,7 +93,7 @@ Partial Class Stocks
         txtIdContainer.Location = New Point(125, 27)
         txtIdContainer.Name = "txtIdContainer"
         txtIdContainer.ReadOnly = True
-        txtIdContainer.Size = New Size(100, 23)
+        txtIdContainer.Size = New Size(55, 23)
         txtIdContainer.TabIndex = 9
         txtIdContainer.Visible = False
         ' 
@@ -150,7 +150,7 @@ Partial Class Stocks
         txtboxSearch.Name = "txtboxSearch"
         txtboxSearch.Size = New Size(268, 23)
         txtboxSearch.TabIndex = 6
-        txtboxSearch.Text = "enter keywords..."
+        txtboxSearch.Text = "search here..."
         ' 
         ' btnSave
         ' 
@@ -189,9 +189,9 @@ Partial Class Stocks
         Label4.AutoSize = True
         Label4.Location = New Point(16, 440)
         Label4.Name = "Label4"
-        Label4.Size = New Size(105, 15)
+        Label4.Size = New Size(65, 15)
         Label4.TabIndex = 2
-        Label4.Text = "General Search Bar"
+        Label4.Text = "Search Box"
         ' 
         ' Label3
         ' 
@@ -209,9 +209,9 @@ Partial Class Stocks
         Label1.AutoSize = True
         Label1.Location = New Point(392, 390)
         Label1.Name = "Label1"
-        Label1.Size = New Size(51, 15)
+        Label1.Size = New Size(113, 15)
         Label1.TabIndex = 2
-        Label1.Text = "Receiver"
+        Label1.Text = "Item Receiver Name"
         ' 
         ' txtboxPersonnel
         ' 
@@ -225,14 +225,14 @@ Partial Class Stocks
         ' 
         DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(6, 61)
         DataGridView1.Name = "DataGridView1"
@@ -252,20 +252,20 @@ Partial Class Stocks
         GroupBox2.Size = New Size(575, 497)
         GroupBox2.TabIndex = 1
         GroupBox2.TabStop = False
-        GroupBox2.Text = "Outbound Stocks"
+        GroupBox2.Text = "Item Holders"
         ' 
         ' DataGridView2
         ' 
         DataGridView2.AllowUserToDeleteRows = False
         DataGridView2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Control
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
-        DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Control
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle4.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
+        DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Location = New Point(6, 61)
         DataGridView2.Name = "DataGridView2"

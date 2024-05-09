@@ -30,7 +30,6 @@ Partial Class Settings
         Label3 = New Label()
         txtPassword = New TextBox()
         Label4 = New Label()
-        btnApply = New Button()
         btnCreate = New Button()
         btnCheck = New Button()
         Panel1.SuspendLayout()
@@ -109,30 +108,17 @@ Partial Class Settings
         Label4.TabIndex = 2
         Label4.Text = "Password"
         ' 
-        ' btnApply
-        ' 
-        btnApply.BackColor = Color.DeepSkyBlue
-        btnApply.Enabled = False
-        btnApply.FlatStyle = FlatStyle.Popup
-        btnApply.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnApply.Location = New Point(292, 269)
-        btnApply.Name = "btnApply"
-        btnApply.Size = New Size(93, 32)
-        btnApply.TabIndex = 3
-        btnApply.Text = "Apply"
-        btnApply.UseVisualStyleBackColor = False
-        ' 
         ' btnCreate
         ' 
         btnCreate.BackColor = Color.DeepSkyBlue
         btnCreate.Enabled = False
         btnCreate.FlatStyle = FlatStyle.Popup
         btnCreate.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnCreate.Location = New Point(156, 269)
+        btnCreate.Location = New Point(228, 269)
         btnCreate.Name = "btnCreate"
-        btnCreate.Size = New Size(93, 32)
+        btnCreate.Size = New Size(152, 32)
         btnCreate.TabIndex = 3
-        btnCreate.Text = "Create"
+        btnCreate.Text = "Create Database"
         btnCreate.UseVisualStyleBackColor = False
         ' 
         ' btnCheck
@@ -140,11 +126,11 @@ Partial Class Settings
         btnCheck.BackColor = Color.DeepSkyBlue
         btnCheck.FlatStyle = FlatStyle.Popup
         btnCheck.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnCheck.Location = New Point(23, 269)
+        btnCheck.Location = New Point(22, 269)
         btnCheck.Name = "btnCheck"
-        btnCheck.Size = New Size(93, 32)
+        btnCheck.Size = New Size(152, 32)
         btnCheck.TabIndex = 3
-        btnCheck.Text = "Check"
+        btnCheck.Text = "Check Connection"
         btnCheck.UseVisualStyleBackColor = False
         ' 
         ' Settings
@@ -154,7 +140,6 @@ Partial Class Settings
         ClientSize = New Size(409, 363)
         Controls.Add(btnCheck)
         Controls.Add(btnCreate)
-        Controls.Add(btnApply)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label2)
@@ -179,7 +164,6 @@ Partial Class Settings
     Friend WithEvents Label3 As Label
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnApply As Button
     Friend WithEvents btnCreate As Button
     Friend WithEvents btnCheck As Button
 End Class

@@ -1,10 +1,7 @@
-﻿Imports System.Reflection
+﻿Imports System.IO
+Imports System.Xml
 Imports MySql.Data.MySqlClient
 Public Class Settings
-    Private server As String
-    Private username As String
-    Private password As String
-    Private database As String
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
     End Sub
@@ -12,7 +9,6 @@ Public Class Settings
         server = txtServer.Text
         username = txtUsername.Text
         password = txtPassword.Text
-        database = "newbileco"
 
         ' Connection string for the MySQL database
         Dim connectionString As String = $"server={server};user={username};password={password};"
@@ -21,10 +17,10 @@ Public Class Settings
         Using connection As New MySqlConnection(connectionString)
             Try
                 connection.Open()
-                MessageBox.Show("Database connection detected!")
+                MessageBox.Show("Connection detected! Click OK to continue.", "PO Management Project 2024", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 btnCreate.Enabled = True
             Catch ex As Exception
-                MessageBox.Show("Error connecting to database: " & ex.Message)
+                MessageBox.Show("" & ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 connection.Close()
             End Try
@@ -32,7 +28,8 @@ Public Class Settings
     End Sub
 
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        ' Connection string for the MySQL database
+        ' store the string value into database
+        database = "newbileco"
         Dim connectionString As String = $"server={server};user={username};password={password};"
 
         ' SQL statements to create the schema and tables
@@ -78,19 +75,32 @@ Public Class Settings
                     createStockTableCommand.ExecuteNonQuery()
                 End Using
 
-                MessageBox.Show("Schema and tables created successfully!")
-                btnApply.Enabled = True
+                MessageBox.Show("Schema and tables created. Click OK to continue.", "PO Management Project 2024", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Create the XML configuration file path
+                Dim configFilePath As String = Path.Combine(Application.StartupPath, "config.xml")
+                Dim conString As String = $"server={server};user={username};password={password};database={database}"
+                ' Create an XML document
+                Dim doc As New XmlDocument()
+
+                ' Create the root element
+                Dim rootElement As XmlElement = doc.CreateElement("configuration")
+                doc.AppendChild(rootElement)
+
+                ' Create the connection string element and set its value
+                Dim connectionStringElement As XmlElement = doc.CreateElement("connectionString")
+                connectionStringElement.InnerText = conString
+                rootElement.AppendChild(connectionStringElement)
+
+                ' Save the XML document to the configuration file
+                doc.Save(configFilePath)
+
+                MessageBox.Show("Configuration file created successfully!", "PO Management Project 2024", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
-                MessageBox.Show("Error creating database and tables: " & ex.Message)
+                MessageBox.Show("Error creating database configuration: " & ex.Message)
             Finally
                 connection.Close()
+                Me.Hide()
             End Try
         End Using
-    End Sub
-
-    Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnApply.Click
-        Everything.conn.ConnectionString = $"server={server};user={username};password={password};database={database};"
-        MessageBox.Show("Database Connection applied!", "Inventory Management prompts", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Me.Hide()
     End Sub
 End Class
