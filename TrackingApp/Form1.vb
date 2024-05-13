@@ -6,14 +6,10 @@ Public Class Form1
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+        IconLoad(Me, "icons\BILECO.ico")
         Dim imagePath As String = IO.Path.Combine(Application.StartupPath, "images\BILECO.jpg")
         Dim image As New Bitmap(imagePath)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.Image = image
-
-        Dim iconPath As String = IO.Path.Combine(Application.StartupPath, "icons\BILECO.ico")
-        Dim icon As New Icon(iconPath)
-        Dim formType As Type = Me.GetType()
-        formType.GetProperty("Icon").SetValue(Me, icon, Nothing)
     End Sub
 End Class

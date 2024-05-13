@@ -14,6 +14,13 @@ Module Everything
     Public password As String
     Public database As String
 
+    Sub IconLoad(form As Form, iconFilePath As String)
+        Dim iconPath As String = Path.Combine(Application.StartupPath, iconFilePath)
+        Dim icon As New Icon(iconPath)
+        Dim formType As Type = form.GetType()
+        formType.GetProperty("Icon").SetValue(form, icon, Nothing)
+    End Sub
+
     Sub connectionOpen()
         connectionOpen(GetConnectionString)
     End Sub

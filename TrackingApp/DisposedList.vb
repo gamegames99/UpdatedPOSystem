@@ -25,5 +25,6 @@ Public Class DisposedList
     Private Sub DisposedList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tableDisposed()
         Me.CenterToParent()
+        IconLoad(Me, "icons\BILECO.ico")
     End Sub
 End Class

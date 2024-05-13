@@ -18,6 +18,7 @@ Public Class listing
 
     Private Sub Listing_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
+        IconLoad(Me, "icons\BILECO.ico")
         hideGB()
         loadCell()
     End Sub

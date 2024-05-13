@@ -12,6 +12,7 @@
 
     Private Sub stock_information_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
+        IconLoad(Me, "icons\BILECO.ico")
         txtStatus.Text = "Status: " & _itemStatus ' Set the itemStatus value to txtStatus
         ' Set the color of txtStatus based on the itemStatus value
         If _itemStatus = "Available" Then

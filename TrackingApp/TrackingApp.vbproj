@@ -6,11 +6,11 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>BILECO.ico</ApplicationIcon>
+    <ApplicationIcon>bin\Debug\net8.0-windows\icons\BILECO.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="BILECO.ico" />
+    <Content Include="bin\Debug\net8.0-windows\icons\BILECO.ico" />
   </ItemGroup>
 
   <ItemGroup>
