@@ -52,27 +52,58 @@ Public Class Disposal
                 Dim result As DialogResult = MessageBox.Show("Are you sure you want to dispose this item?", "Confirmation",
                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 If result = DialogResult.Yes Then
-                    Dim reason As String = InputBox("Please provide a reason for disposal:", "Reason")
-                    If Not String.IsNullOrWhiteSpace(reason) Then
-                        ' Insert into history table
-                        cmd.Connection = conn
-                        cmd.CommandText = "INSERT INTO disposal (item_desc, item_serial,po_number,reason,date_of_disposal) VALUES (@dsc, @srl, @poNo,@reason,@dod)"
-                        cmd.Parameters.Clear()
-                        cmd.Parameters.Add("@dod", MySqlDbType.Date).Value = DateTime.Today
-                        cmd.Parameters.Add("@poNo", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Purchase Order #").Value.ToString()
-                        cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Serial Number").Value.ToString()
-                        cmd.Parameters.Add("@dsc", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Item Description").Value.ToString()
-                        cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
-                        cmd.ExecuteNonQuery()
+                    ' Create custom input dialog with ComboBox for reasons
+                    Dim inputForm As New Form()
+                    inputForm.Text = "Reasons for Disposal"
+                    inputForm.Width = 350
+                    inputForm.Height = 150
+                    inputForm.FormBorderStyle = FormBorderStyle.FixedDialog
+                    inputForm.StartPosition = FormStartPosition.CenterScreen
+                    inputForm.MinimizeBox = False
+                    inputForm.MaximizeBox = False
 
-                        'cmd.Connection = conn
-                        'cmd.CommandText = "DELETE FROM po_items_container WHERE id_container = @id"
-                        'cmd.Parameters.Clear()
-                        'cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContain
-                        'cmd.ExecuteNonQuery()
-                        MsgBox("Item Disposed!")
-                    Else
-                        MsgBox("Reason for disposal is required.")
+                    Dim promptLabel As New Label()
+                    promptLabel.Text = "Please select a reason for disposal:"
+                    promptLabel.SetBounds(10, 10, 300, 20)
+                    inputForm.Controls.Add(promptLabel)
+
+                    Dim comboBox As New ComboBox()
+                    comboBox.SetBounds(10, 40, 300, 21)
+                    comboBox.DropDownStyle = ComboBoxStyle.DropDown
+                    comboBox.Items.AddRange(New String() {"Damaged Unit", "Obsolete Unit", "Lost Unit", "Others"})
+                    inputForm.Controls.Add(comboBox)
+
+                    Dim okButton As New Button()
+                    okButton.Text = "OK"
+                    okButton.SetBounds(235, 70, 75, 23)
+                    okButton.DialogResult = DialogResult.OK
+                    inputForm.Controls.Add(okButton)
+
+                    inputForm.AcceptButton = okButton
+
+                    If inputForm.ShowDialog() = DialogResult.OK Then
+                        Dim reason As String = comboBox.SelectedItem?.ToString()
+                        If String.IsNullOrWhiteSpace(reason) Then
+                            MessageBox.Show("Reason for disposal is required. Item has not been disposed.", "Disposal Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        Else
+                            ' Insert into history table
+                            cmd.Connection = conn
+                            cmd.CommandText = "INSERT INTO disposal (item_desc, item_serial,po_number,reason,date_of_disposal) VALUES (@dsc, @srl, @poNo,@reason,@dod)"
+                            cmd.Parameters.Clear()
+                            cmd.Parameters.Add("@dod", MySqlDbType.Date).Value = DateTime.Today
+                            cmd.Parameters.Add("@poNo", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Purchase Order #").Value.ToString()
+                            cmd.Parameters.Add("@srl", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Serial Number").Value.ToString()
+                            cmd.Parameters.Add("@dsc", MySqlDbType.String).Value = DataGridView1.SelectedRows(0).Cells("Item Description").Value.ToString()
+                            cmd.Parameters.Add("@reason", MySqlDbType.String).Value = reason
+                            cmd.ExecuteNonQuery()
+
+                            'cmd.Connection = conn
+                            'cmd.CommandText = "DELETE FROM po_items_container WHERE id_container = @id"
+                            'cmd.Parameters.Clear()
+                            'cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idContain
+                            'cmd.ExecuteNonQuery()
+                            MsgBox("Item Disposed!", MsgBoxStyle.Information)
+                        End If
                     End If
                 End If
             Else

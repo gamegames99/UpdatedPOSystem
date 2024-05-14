@@ -5,7 +5,7 @@ Public Class DisposedList
         Try
             Ifcon()
             cmd.Connection = conn
-            cmd.CommandText = "SELECT * FROM disposal"
+            cmd.CommandText = "SELECT * FROM disposal ORDER by disposal_id DESC"
 
             Dim adapter As New MySqlDataAdapter(cmd)
             Dim dataTable As New DataTable()

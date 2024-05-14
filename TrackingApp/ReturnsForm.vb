@@ -5,7 +5,7 @@ Public Class ReturnsForm
     Private Sub newTable()
         Try
             Ifcon()
-            Dim query As String = "SELECT * FROM stock"
+            Dim query As String = "SELECT * FROM stock ORDER by stock_id DESC"
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim dataTable As New DataTable()
             adapter.Fill(dataTable)
@@ -32,9 +32,39 @@ Public Class ReturnsForm
                 Dim idstocks As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("stock_id").Value)
                 Dim result As DialogResult = MessageBox.Show("Selected item will be retrieved. Do you wish to continue?", "Confirmation Message : Returns",
                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Information)
-                If result = DialogResult.Yes Then
-                    Dim reason As String = InputBox("Please provide a reason for returning item:", "Return reason is required to continue")
-                    If Not String.IsNullOrWhiteSpace(reason) Then
+                Dim inputForm As New Form()
+                inputForm.Text = "Reasons for Return"
+                inputForm.Width = 350
+                inputForm.Height = 150
+                inputForm.FormBorderStyle = FormBorderStyle.FixedDialog
+                inputForm.StartPosition = FormStartPosition.CenterScreen
+                inputForm.MinimizeBox = False
+                inputForm.MaximizeBox = False
+
+                Dim promptLabel As New Label()
+                promptLabel.Text = "Please select a reason for returns:"
+                promptLabel.SetBounds(10, 10, 300, 20)
+                inputForm.Controls.Add(promptLabel)
+
+                Dim comboBox As New ComboBox()
+                comboBox.SetBounds(10, 40, 300, 21)
+                comboBox.DropDownStyle = ComboBoxStyle.DropDown
+                comboBox.Items.AddRange(New String() {"Broken Unit", "For replacement", "For repair", "Lost Unit", "Others"})
+                inputForm.Controls.Add(comboBox)
+
+                Dim okButton As New Button()
+                okButton.Text = "OK"
+                okButton.SetBounds(235, 70, 75, 23)
+                okButton.DialogResult = DialogResult.OK
+                inputForm.Controls.Add(okButton)
+
+                inputForm.AcceptButton = okButton
+
+                If inputForm.ShowDialog() = DialogResult.OK Then
+                    Dim reason As String = comboBox.SelectedItem?.ToString()
+                    If String.IsNullOrWhiteSpace(reason) Then
+                        MessageBox.Show("Reason for returns is required. No returns were made.", "Retrieval Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Else
                         ' Insert into history table
                         cmd.Connection = conn
                         cmd.CommandText = "INSERT INTO returns (returner_name, returned_item_name,returned_item_serial,returned_reason,returned_date) 
@@ -53,8 +83,6 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
                         cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idstocks
                         cmd.ExecuteNonQuery()
                         MsgBox("Item Returned!", MsgBoxStyle.Information)
-                    Else
-                        MsgBox("Reason for returns is required.", MsgBoxStyle.Exclamation)
                     End If
                 End If
             Else
@@ -79,14 +107,14 @@ VALUES (@rename, @name, @srl,@reason,@rdate)"
                 Dim qtyValue As Object = selectedRow.Cells("Quantity").Value
             End If
         Catch ex As Exception
-            MsgBox("You cannot select from this table in View Mode", MsgBoxStyle.Exclamation)
+            MsgBox("Selection is DISABLED in View Mode", MsgBoxStyle.Exclamation)
         End Try
     End Sub
 
     Private Sub btnViewItems_Click(sender As Object, e As EventArgs) Handles btnViewItems.Click
         Try
             Ifcon()
-            Dim query As String = "SELECT * FROM returns"
+            Dim query As String = "SELECT * FROM returns ORDER by id_returns DESC"
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim dt As New DataTable()
             adapter.Fill(dt)

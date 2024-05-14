@@ -52,7 +52,7 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
     Private Sub stockTable()
         Try
             Ifcon()
-            Dim sql As String = "SELECT * FROM po_items_container"
+            Dim sql As String = "SELECT * FROM po_items_container ORDER by id_container DESC"
             Dim command As New MySqlCommand(sql, conn)
             Dim adapter As New MySqlDataAdapter(command)
             Dim dt As New DataTable()
@@ -71,7 +71,7 @@ VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
     Private Sub newTable()
         Try
             Ifcon()
-            Dim query As String = "SELECT * FROM stock"
+            Dim query As String = "SELECT * FROM stock ORDER by stock_id DESC"
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim dataTable As New DataTable()
             adapter.Fill(dataTable)

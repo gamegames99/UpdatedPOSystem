@@ -47,7 +47,7 @@ Partial Class ReportsForm
         btnView.Name = "btnView"
         btnView.Size = New Size(119, 35)
         btnView.TabIndex = 0
-        btnView.Text = "View"
+        btnView.Text = "Show Info"
         btnView.UseVisualStyleBackColor = False
         ' 
         ' Panel1
@@ -67,9 +67,9 @@ Partial Class ReportsForm
         Label1.ForeColor = Color.DeepSkyBlue
         Label1.Location = New Point(12, 9)
         Label1.Name = "Label1"
-        Label1.Size = New Size(92, 30)
+        Label1.Size = New Size(91, 30)
         Label1.TabIndex = 0
-        Label1.Text = "List of ..."
+        Label1.Text = "No data"
         ' 
         ' DataGridView1
         ' 
@@ -100,7 +100,7 @@ Partial Class ReportsForm
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(119, 35)
         btnSave.TabIndex = 0
-        btnSave.Text = "Save to Excel"
+        btnSave.Text = "Export as Excel"
         btnSave.UseVisualStyleBackColor = False
         ' 
         ' ComboBox1

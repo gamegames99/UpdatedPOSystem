@@ -31,6 +31,7 @@ Partial Class Form1
         PictureBox1 = New PictureBox()
         Panel2 = New Panel()
         Label3 = New Label()
+        Label4 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -86,6 +87,7 @@ Partial Class Form1
         ' Panel1
         ' 
         Panel1.BackColor = Color.White
+        Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(TextBox1)
@@ -124,9 +126,21 @@ Partial Class Form1
         Label3.ForeColor = Color.DeepSkyBlue
         Label3.Location = New Point(12, 9)
         Label3.Name = "Label3"
-        Label3.Size = New Size(100, 17)
+        Label3.Size = New Size(148, 17)
         Label3.TabIndex = 0
-        Label3.Text = "Welcome Back!"
+        Label3.Text = "Welcome Back, Admin!"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.White
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.Black
+        Label4.Location = New Point(12, 171)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(173, 15)
+        Label4.TabIndex = 0
+        Label4.Text = "Biliran Electric Cooperative, Inc."
         ' 
         ' Form1
         ' 
@@ -154,5 +168,6 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 
 End Class

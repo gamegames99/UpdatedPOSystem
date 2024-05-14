@@ -28,14 +28,19 @@ Public Class ReportsForm
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         ' Open the database connection
+
         Ifcon()
         If ComboBox1.SelectedItem IsNot Nothing Then
             DataGridView1.DataSource = Nothing
             DataGridView1.Rows.Clear()
 
             Dim tableName As String = tableMappings(ComboBox1.SelectedItem.ToString())
-
-            Dim query As String = "SELECT * FROM " & tableName
+            Dim primaryKeyColumns As List(Of String) = GetPrimaryKeyColumns(tableName)
+            Dim orderByClause As String = ""
+            If primaryKeyColumns.Count > 0 Then
+                orderByClause = " ORDER BY " & primaryKeyColumns(0) & " DESC"
+            End If
+            Dim query As String = "SELECT * FROM " & tableName & orderByClause
 
             Using command As New MySqlCommand(query, conn)
                 Using adapter As New MySqlDataAdapter(command)
@@ -47,7 +52,7 @@ Public Class ReportsForm
                     ModifyPoListingColumnNames(dataTable)
                     ModifyReturnsColumnNames(dataTable)
                     ModifyStocksColumnNames(dataTable)
-                    Dim primaryKeyColumns As List(Of String) = GetPrimaryKeyColumns(tableName)
+
 
                     ' Remove the primary key columns from the DataTable
                     For Each columnName As String In primaryKeyColumns
