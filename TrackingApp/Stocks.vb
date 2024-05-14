@@ -6,20 +6,45 @@ Public Class Stocks
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Ifcon()
-            cmd.Connection = conn
-            cmd.CommandText = "INSERT INTO stock(stockDescription, name_receiver, stockQuantity, date_received, stock_serial) 
+            If DataGridView1.SelectedRows.Count > 0 Then
+                Dim idContain As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("id_container").Value)
+                Dim srlNumber As String = DataGridView1.SelectedRows(0).Cells("Serial Number").Value.ToString()
+                ' Check if the item exists in the stock table
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT COUNT(*) FROM stock WHERE stock_serial = @serial"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@serial", srlNumber)
+                Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                If count > 0 Then
+                    MsgBox("Selected item is already designated. You cannot designate an item that is unavailable or disposed.", MsgBoxStyle.Exclamation)
+                    Return ' Exit the event handler
+                End If
+                cmd.Connection = conn
+                cmd.CommandText = "SELECT COUNT(*) FROM disposal WHERE item_serial = @serial"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@serial", srlNumber)
+                Dim ct As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                If ct > 0 Then
+                    MsgBox("Selected item has already been disposed. You cannot designate an item that is unavailable or disposed.", MsgBoxStyle.Exclamation)
+                    Return ' Exit the event handler
+                End If
+                cmd.Connection = conn
+                cmd.CommandText = "INSERT INTO stock(stockDescription, name_receiver, stockQuantity, date_received, stock_serial) 
 VALUES (@desc, @nrec, @qty, @drec, @stksrl)"
-            cmd.Parameters.Clear()
-            cmd.Parameters.Add("@drec", MySqlDbType.Date).Value = DateTime.Today
-            cmd.Parameters.Add("@nrec", MySqlDbType.String).Value = txtboxPersonnel.Text
-            cmd.Parameters.Add("@qty", MySqlDbType.Int32).Value = txtboxQuantity.Text
-            cmd.Parameters.Add("@desc", MySqlDbType.String).Value = txtboxDescription.Text
-            cmd.Parameters.Add("@stksrl", MySqlDbType.String).Value = serialStorage
-            cmd.ExecuteNonQuery()
-            MsgBox("Saved")
-            clearAll()
+                cmd.Parameters.Clear()
+                cmd.Parameters.Add("@drec", MySqlDbType.Date).Value = DateTime.Today
+                cmd.Parameters.Add("@nrec", MySqlDbType.String).Value = txtboxPersonnel.Text
+                cmd.Parameters.Add("@qty", MySqlDbType.Int32).Value = txtboxQuantity.Text
+                cmd.Parameters.Add("@desc", MySqlDbType.String).Value = txtboxDescription.Text
+                cmd.Parameters.Add("@stksrl", MySqlDbType.String).Value = serialStorage
+                cmd.ExecuteNonQuery()
+                MsgBox("Item has been designated to :" + txtboxPersonnel.Text, MsgBoxStyle.Information)
+                clearAll()
+            Else
+                MsgBox("No row selected.")
+            End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox(ex.Message)
         Finally
             conn.Close()
         End Try
